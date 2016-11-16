@@ -1,0 +1,179 @@
+@charset "utf-8";
+/* =============================================================================
+   BASIC
+   ========================================================================== */
+html, body { margin:0px; padding:0px; height:100%; }
+body, th, td, input { font-family:"Hiragino Kaku Gothic Pro","微軟正黑體","Microsoft Jhenghei",Helvetica,Arial,sans-serif; font-size:14px; line-height: 120%; }
+a{ text-decoration: none;}
+b{ font-weight:normal;}
+p{ line-height:2em; margin:0; padding:0;}
+h1,h2,h3,h4,h5,h6{ font-weight:400;}
+h1{ font-size:40px; font-family:"Hiragino Kaku Gothic Pro","微軟正黑體","Microsoft Jhenghei",Helvetica,Arial,sans-serif; }
+h2{ font-size:26px; font-family:"Hiragino Kaku Gothic Pro","微軟正黑體","Microsoft Jhenghei",Helvetica,Arial,sans-serif; line-height: 180%; }
+h3{ font-size:18px; font-family:"Hiragino Kaku Gothic Pro","微軟正黑體","Microsoft Jhenghei",Helvetica,Arial,sans-serif; line-height: 120%; font-weight:bold; }
+h4{ font-size:16px; font-family:"Hiragino Kaku Gothic Pro","微軟正黑體","Microsoft Jhenghei",Helvetica,Arial,sans-serif; font-weight:bolder; line-height:0;}
+h5{ font-family:"Hiragino Kaku Gothic Pro","微軟正黑體","Microsoft Jhenghei",Helvetica,Arial,sans-serif; }
+h6{ font-family:"Hiragino Kaku Gothic Pro","微軟正黑體","Microsoft Jhenghei",Helvetica,Arial,sans-serif; }
+a:link, a:visited { text-decoration:none; cursor:pointer; }
+table,th,td { margin:0; padding:0; border:none; outline:none; border-collapse:collapse; border-spacing:0; }
+body {
+	background:url(../images/form-bg.gif);
+}
+a:visited {
+	font-size: 100%;
+	color:#e62310;
+	text-decoration:none;
+}
+a:link {
+	font-size: 100%;
+	color:#e62310;
+	text-decoration:none;
+}
+a:hover {
+	font-size: 100%;
+	color:#000;
+	text-decoration:underline;
+}
+/*----------------- Font --------------------*/
+.word-red {
+	font-size:100%;
+	color:#ff0000;
+}
+.word-big-blue {
+	font-size:125%;
+	color:#03C;
+	font-weight:bolder;
+	line-height: 140%;
+}
+/*----------------- 最外層包裝 --------------------*/
+#wrapper {
+	width: 1280px;
+	position:relative;
+	text-align:left;
+}
+/*----------------- content --------------------*/
+#content{
+	width:100%;
+	float:left;
+	background:#FFF;
+}
+#form{
+	width:90%;
+	margin-left:5%;
+	margin-top:15px;
+	margin-bottom:15px;
+	float:left;
+}
+#form table {
+	width:100%;
+	font-family:Arial, Helvetica, sans-serif;
+	padding:0;
+	margin:0;
+	text-align:left;
+}
+#form th {
+	padding:13px 8px 13px 8px;;
+	border-bottom:1px #CCC dashed;
+}
+#form td {
+	padding:13px 8px 13px 8px;;
+	border-bottom:1px #CCC dashed;
+}
+#tai{
+	width:100%;
+	float:left;
+	margin-bottom:10px;
+}
+#tai img{
+	width:100%;
+}
+#tai-mobile{
+	display:none;
+	width:100%;
+	float:left;
+}
+#tai-mobile img{
+	width:100%;
+}
+#notice{
+	width:60%;
+	float:left;
+	margin-left:20%;
+	padding:20px 20px 20px 20px;
+	border:1px #CCCCCC solid;
+	background:#FFF;
+	text-align:left;
+}
+#notice ul {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+#notice li {
+	width:98%;
+	list-style-type:none;
+	background:url(../images/icon-01.gif);
+	background-position:left top;
+	background-repeat:no-repeat;
+	display:block;
+	padding-top:8px;
+	padding-bottom:8px;
+	padding-left:15px;
+	clear:both;
+	float:left;
+	border-bottom:1px #CCCCCC dashed;
+}
+#list01{
+	width:50%;
+	float:left;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+#list01 table {
+	width:95%;
+	font-family:Arial, Helvetica, sans-serif;
+	padding:0;
+	margin-left:2.5%;
+}
+#list01 th {
+	padding:8px 8px 8px 8px;;
+	border-bottom:1px #CCC dashed;
+}
+#list01 td {
+	padding:8px 8px 8px 8px;;
+	border-bottom:1px #CCC dashed;
+}
+/*----------------- footer --------------------*/
+#footer{
+	width:100%;
+	clear:both;
+	float:left;
+	background:#e70012;
+	text-align:center;
+}
+
+
+@media only screen and (max-width:1200px) {
+/*----------------- 最外層包裝 --------------------*/
+#wrapper {
+	width: 100%;
+}
+/*----------------- footer --------------------*/
+#footer img{
+	width:100%;
+}
+		}
+
+
+@media only screen and (max-width:680px) {
+#tai{
+	display:none;
+}
+#tai-mobile{
+	display:block;
+}
+#list01{
+	width:100%;
+	clear:both;
+}
+		}

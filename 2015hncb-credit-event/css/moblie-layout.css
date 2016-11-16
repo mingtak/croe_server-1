@@ -1,0 +1,130 @@
+
+@media only screen and (max-width: 640px) {
+
+
+table {
+	margin:0 auto;	
+}
+.layout {
+	position:relative;
+	width:100%;
+	height:100%;
+	margin:0 auto;
+	padding:0;
+	font-family:"微軟正黑體";
+}
+
+.layout img {
+  height : auto;
+  max-width: 100%;
+}
+.bg{
+	max-width:100%; 
+	height:100%;
+	background: url(../images/app_bg.jpg) repeat;
+	background-size:cover;
+	margin:0 auto;
+
+	
+}
+.name{
+	max-width:100%;
+	margin:0 auto;
+	text-align:center;
+	padding:0 20px 0 20px;
+}
+
+.ttop{
+	max-width:100%;
+	margin:0 auto;
+	text-align:center;
+	padding:20px 0;
+}
+.ttop img{
+	width:90%;
+	padding:20px 0 0 0;
+}
+.winnerlist{
+	background: url(../images/name.png) no-repeat;
+	background-size:95%;
+	margin:20px 0 0 0;	
+	width:250px;
+	height:320px;
+	display:block;
+	font-weight:bold;
+	font-size:15px;	
+	font-family:"微軟正黑體";
+}
+.winner{
+	font-size:18px;
+	padding:5px 0 0 20px;
+	display:block;
+}
+.awardsall{
+	margin:90px 0 0 20px;
+	display:block;
+	width:200px;
+}
+.awards{
+	text-align:center;
+	margin:10px 0 0 0;
+}
+
+.winnerprize{
+}
+
+.listall{
+	text-align:center;
+	color:#FF0;
+	font-size:13px;
+	margin:30px 0 0 10px ;	
+}
+.listall img{ 
+	width:75px;
+	height:31px;
+	margin:0 auto;
+	margin:10px 0 0 0;
+	text-align:center;
+  }
+.listall table td{
+	line-height:25px;
+}
+.button{
+	width:86%;
+	margin:0 auto;
+	padding:20px 10px 0 10px;
+	display:block;
+	
+}
+.button img{
+	width:92%;
+	
+}
+.choose{
+}
+.choose img{
+	
+	padding:20px 8px 0 20px;	
+	height:70%;
+}
+
+.footer {
+	bottom:-5px;
+	width:100%;
+	text-align:center;
+	overflow:hidden;
+}
+.footer img{
+
+	
+}
+
+
+}
+
+
+
+
+
+
+

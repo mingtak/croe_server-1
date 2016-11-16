@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>華得來點數兌換網</title>
+<!-- TemplateEndEditable -->
+<meta name="viewport" content="width=device-width; initial-scale=1.0;">
+
+<script type="text/javascript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+function MM_showHideLayers() { //v9.0
+  var i,p,v,obj,args=MM_showHideLayers.arguments;
+  for (i=0; i<(args.length-2); i+=3) 
+  with (document) if (getElementById && ((obj=getElementById(args[i]))!=null)) { v=args[i+2];
+    if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v=='hide')?'hidden':v; }
+    obj.visibility=v; }
+}
+//-->
+</script>
+<link href="../content/css/web.css" rel="stylesheet" type="text/css" />
+<!-- TemplateBeginEditable name="css-link" -->
+<link href="../content/css/rule.css" rel="stylesheet" type="text/css" />
+<!-- TemplateEndEditable -->
+
+</head>
+
+<body onload="MM_preloadImages('../content/images/btn-01b.gif','../content/images/btn-02b.gif','../content/images/btn-03b.gif','../content/images/btn-04b.gif','../content/images/btn-05b.gif','../content/images/btn-06b.gif','../content/images/btn-07b.gif','../content/images/btn-08b.gif','../content/images/btn-09b.gif','../content/images/btn-10b.gif')">
+<div id="all" align="center">
+<div id="wrapper">
+<!--header-->
+<div id="header">
+<div id="logo"><a href="../index.html">華得來點數兌換網</a></div>
+<!--hide item-->
+<div id="hide-rule">
+<ul>
+<li><a href="../content/rule/rule01.html">華得來點數兌換辦法</a></li>
+<li style="border-bottom:0"><a href="../content/rule/rule02.html">信用卡紅利積點活動規範</a></li>
+</ul>
+</div>
+<div id="hide-all">
+<img src="../content/images/block.gif" onmouseOver="MM_showHideLayers('hide-rule','','hide','hide-all','','hide')" />
+</div>
+<!--hide item end-->
+</div>
+<!--header end-->
+<!--main-->
+<div id="main">
+<!--content-->
+<div id="content-2">
+<!-- TemplateBeginEditable name="main-content" -->
+<div id="root"><a href="../index.html"><img src="../content/images/icon-home.gif" /></a> &gt; 兌換點數</div>
+<div id="word">
+<h4>華南金融集團「華得來」集點活動規範</h4>
+<p>華南金融集團旗下華南銀行、華南永昌證券及華南產險等子公司(以下稱本集團各子公司)為回饋客戶，特別推出「華得來」集點活動(以下稱本活動)。客戶得以購買指定之金融商品或交易所獲得之點數兌換商品或服務。就本活動之具體實施規範，所有參加人均應遵守下列規定：</p>
+</div>
+<div id="rule-item">
+<ul>
+<li><a href="#01">參加資格</a></li>
+<li><a href="#02">集點方式</a></li>
+<li><a href="#03">兌換方式及標準</a></li>
+<li><a href="#04">特別規定</a></li>
+<li><a href="#05">法律關係及稅捐</a></li>
+<li><a href="#06">修改及終止</a></li>
+<li><a href="#07">適用法律</a></li>
+<li><a href="#08">兌換流程</a></li>
+</ul>
+</div>
+<!--01-->
+<div id="word" style="margin-top:20px;">
+  <a name="01" id="01"></a>
+  <h4 style="color:#F00;">參加資格</h4>
+  <p>凡購買本集團各子公司指定之金融商品且簽署同意書即可參加本活動，並可使用累計之「華得來」點數兌換專屬網站所提供之商品與服務。如遇不可抗力或不可歸責於本集團之事由，華南銀行、華南永昌證券及華南產險保留終止、變更參加資格之權利，更動之內容，以華得來點數兌換網站公告為準。</p>
+  <p>&nbsp;</p>
+  <p>前揭指定金融商品及贈點比率如下：</p>
+  <p>&nbsp;</p>
+  <p class="word-redblock">華南銀行：</p>
+  <p>
+  <ul>
+    <li>保管箱：每箱5,000點(新承租戶年租金超過1,500元，續租戶及已享租金優惠者除外）。</li>
+    <li>黃金存摺開戶：每戶400點(完成開戶)。</li>
+    <li>黃金存摺定期定額申購：每筆200點(完成扣款)。</li>
+    <li>人身保險：每件1,500點(次月15日結算時無取消或契約撤銷之情況)。</li>
+    <li>網路銀行跨行轉帳：每筆5點(限ATM機制且該筆交易已享優惠者除外)。</li>
+    <li>申辦網路銀行：每戶20點(半年內重新申請者除外)。</li>
+    <li>開通行動網銀：每戶20點(半年內重新申請者除外)。</li>
+    <li>網路櫃檯申辦網路銀行：每戶20點(半年內重新申請者除外)。</li>
+    <li>網路櫃檯申請電子綜合對帳單：每戶20點(半年內重新申請者除外)。</li>
+    <li>網路櫃檯申請停車費代扣繳：每戶20點(同一台車半年內重新申請者除外)。</li>
+  </ul>
+  </p>
+  <p>&nbsp;</p>  
+  <p class="word-redblock">華南永昌證券：</p>
+  <p>
+  <ul>
+    <li>證券交易(含權證)：每成交10,000 元1點(需申請華南永昌證券電子對帳單)。</li>
+    <li>期貨交易大台：每成交一口10點(需申請期貨電子對帳單)。</li>
+    <li>期貨交易小台(含選擇權)：每成交一口5點(需申請期貨電子對帳單)。</li>
+    <li>複委託交易：每成交約當新臺幣10,000 元1點(需申請華南永昌證券複委託電子對帳單)。</li>
+    <li>註：證券相關交易客戶須完成簽署個人資料保護法告知暨同意書及申請交易商品之電子對帳單後，始得計算並累積交易點數。</li>
+  </ul>
+  </p>
+  <p>&nbsp;</p> 
+  <p class="word-redblock">華南產險：</p>
+  <p>
+  <ul>
+    <li>強制險：每件50點(保費已銷帳或兌現)。</li>
+    <li>傷害險：每件100點(保費已銷帳或兌現)。</li>
+    <li>健康險：每件100點(保費已銷帳或兌現)。</li>
+  </ul>
+  </p>
+  <p style="clear:both;">&nbsp;</p>
+  <p class="word-redblock">本活動之贈點對象限「自然人」客戶，保險業務之贈點對象為「要保人」。</p>
+</div>
+<!--01 end-->
+<!--02-->
+<div id="word" style="margin-top:20px;">
+  <a name="02" id="02"></a>
+  <h4 style="color:#F00;">集點方式</h4>
+  <p><ul>
+  <li>客戶持有華南銀行信用卡刷卡消費所獲得之紅利點數得與「華得來」點數合併兌換，本集團各子公司保留隨時調整上述特定商品及其積點比例之相關規定之權利。</li>
+  <li>「華得來」點數僅供客戶於點數有效期間內於本網站上兌換商品或服務，客戶不得要求將點數折算現金或以其他方式給付。</li>
+  <li>客戶因取消或退還所兌換之商品或服務時，其所兌換之「華得來」點數及信用卡紅利點數將依使用比率返還，惟若點數返還時已逾有效期限者，將逕自扣除。</li>
+  <li>客戶所獲得之「華得來」點數之有效使用期間，自點數生效日起2年後年底前有效。例如：於2015年所累積之點數，最遲於2017年12月31日前使用完畢，於有效使用期間內未使用者，點數將自動失效。</li>
+  <li>客戶若對點數有爭議，須以本集團各子公司電腦資料為準。</li>
+  <li>點數於兌換商品前並不構成客戶之資產，亦不得轉讓予其他任何第三人，且客戶不得要求本集團各子公司將點數折算現金或給予其他非回饋項目之給付。</li>
+  </ul></p>
+</div>
+<!--02 end-->
+<!--03-->
+<div id="word" style="margin-top:20px;">
+  <a name="03" id="03"></a>
+  <h4 style="color:#F00;">兌換方式及標準</h4>
+  <p><ul>
+  <li>客戶以「華得來」點數加計華南銀行信用卡紅利點數兌換時，系統將優先扣抵「華得來」點數，不足部分始扣抵華南銀行信用卡紅利點數。</li>
+  <li>客戶得以部份點數加自付額兌換商品。自付額部份，僅能以華南銀行信用卡為支付工具。</li>
+  <li>客戶於兌換商品，視為同意本集團各子公司及提供貨品之廠商，將其所提供之個人資料予以利用及為電腦處理發貨程序。</li>
+  <li>本集團各子公司保留兌換方式變更之權利。</li>
+  </ul></p>
+</div>
+<!--03 end-->
+<!--04-->
+<div id="word" style="margin-top:20px;">
+  <a name="04" id="04"></a>
+  <h4 style="color:#F00;">特別規定</h4>
+  <p><ul>
+  <li>當客戶終止與本集團各子公司之金融商品或交易之全部契約關係後，將無法參與本活動，且其剩餘的點數亦將同時失效。</li>
+  <li>所兌換之商品若在遞送過程中毀損或商品本身有瑕疵時，客戶可在收到商品七天內以電話告知本集團各子公司，請求本活動參與廠商交付無瑕疵之同種類產品，並退回原商品至發貨廠商，請務必依原廠包裝退回，如內附之說明書、保證書等。</li>
+  <li>本集團各子公司有權經公告後變更本活動之商品、參與廠商及所有兌換憑證。</li>
+  <li>客戶欲兌換之商品或服務已超出本集團各子公司所設定之限量時，本集團各子公司得以電話或書面方式公告之，並基於善意之原則，盡量協助客戶更改兌換其他商品，但客戶不得堅持兌換原欲兌換之超過限量商品。</li>
+  <li>本活動所有商品皆以實物為準，尺寸測量略有誤差，標示僅供參考，實際尺寸、顏色皆以實物為準。</li>
+  <li>本活動之商品自付額價格，可能因季節性因素、廠商專案促銷或價格調降等情形與大賣場價格有所差距，請會議依個人情況選擇兌換。</li>
+  </ul></p>
+</div>
+<!--04 end-->
+<!--05-->
+<div id="word" style="margin-top:20px;">
+  <a name="05" id="05"></a>
+  <h4 style="color:#F00;">法律關係及稅捐</h4>
+  <p>本活動提供之各類回饋商品，係參加廠商直接提供予客戶，本集團各子公司與各參加廠商間並無合夥、經銷、代理關係或保證人關係；如客戶與本活動之參加廠商就所提供之商品或服務有爭議時，均應由各參加廠商負責，本集團各子公司將善盡協調之道義責任，但不負損失賠償責任。</p>
+</div>
+<!--05 end-->
+<!--06-->
+<div id="word" style="margin-top:20px;">
+  <a name="06" id="06"></a>
+  <h4 style="color:#F00;">修改及終止</h4>
+  <p>本集團各子公司得隨時修正、暫停、終止本活動及本規範(包括但不限於參加資格、集點方式、兌換方式及標準)，並於各子公司相關媒體(帳單訊息及網站等)、各營業處所公告後生效。客戶不得因此向華南金融集團主張任何權利。</p>
+</div>
+<!--06 end-->
+<!--07-->
+<div id="word" style="margin-top:20px;">
+  <a name="07" id="07"></a>
+  <h4 style="color:#F00;">適用法律</h4>
+  <p>本活動規範未盡事宜，悉依中華民國相關法令規定辦理。</p>
+</div>
+<!--07 end-->
+<!--08-->
+<div id="word-flow" style="margin-top:20px;">
+  <a name="08" id="08"></a>
+  <h4 style="color:#F00;">兌換流程</h4>
+  <p><img src="../content/rule/images/flow.gif" /></p>
+</div>
+<div id="word-flow-2" style="margin-top:20px;">
+  <a name="07" id="07"></a>
+  <h4 style="color:#F00;">兌換流程</h4>
+  <p><span class="word-orange">加入「華得來點數兌換平台」會員</span>→<span class="word-orange">完成會員身分認證</span>→<span class="word-orange">登入會員</span>→<span class="word-orange">瀏覽兌換商品</span>→<span class="word-orange">確認兌換商品</span>→<span class="word-orange">確認送貨資料</span>→<span class="word-orange">確認兌換</span>→<span class="word-orange">兌換成功</span></p>
+</div>
+<!--08 end-->
+<!-- TemplateEndEditable -->
+</div>
+<!--content end-->
+</div>
+<!--main end-->
+</div>
+<!--footer-->
+<div id="footer">
+<p>建議瀏覽器版本為IE9以後版本，並將語系設為中文Big5，以獲得最佳瀏覽效果。</p>
+<p>顧客服務專線：華南銀行：(02)2181-0101、華南永昌證券：412-8889、華南產險：(02)2761-6969 / 0800-010850、華南期貨02-27180000</p>
+<p>本網站由瑪奇朵股份有限公司建置維護</p>
+</div>
+<!--footer end-->
+</div>
+<!--QRcode-->
+<div id="QRcode"></div>
+<!--QRcode end-->
+<!--gotop-->
+<div id="gotop">
+<ul class="links">
+<li><a href="#">TOP</a></li>
+</ul>
+</div>
+<!--gotop end-->
+</body>
+</html>

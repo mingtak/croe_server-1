@@ -1,0 +1,479 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>華得來點數兌換網</title>
+<meta name="viewport" content="width=device-width; initial-scale=1.0;">
+
+<script type="text/javascript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+function MM_showHideLayers() { //v9.0
+  var i,p,v,obj,args=MM_showHideLayers.arguments;
+  for (i=0; i<(args.length-2); i+=3) 
+  with (document) if (getElementById && ((obj=getElementById(args[i]))!=null)) { v=args[i+2];
+    if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v=='hide')?'hidden':v; }
+    obj.visibility=v; }
+}
+//-->
+</script>
+<link href="content/css/web.css" rel="stylesheet" type="text/css" />
+<link href="content/css/index.css" rel="stylesheet" type="text/css" />
+<!--大圖-->
+<link rel="stylesheet" href="content/css/flexslider.css" type="text/css" media="screen" />
+<script src="index-js/slider/jquery.min.js"></script>
+<script defer src="index-js/slider/jquery.flexslider.js"></script>
+
+<!--控制手機版選單-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $(".toggle").click(function() {
+        $(this).toggleClass("active");
+        $(".nav").slideToggle();
+    });
+    $(".nav > ul > li:has(ul) > a").append('<div class="arrow-bottom"></div>');
+});
+</script>
+
+<!--jCarouselLiteDemo-->
+<script type="text/javascript" src="index-js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="index-js/jquery.cycle.all.js"></script>
+<script type="text/javascript" src="index-js/jcarousellite_1.0.1.min.js"></script>
+<script type="text/javascript">
+var $container;
+$(function() {
+  $("#s1").jCarouselLite({
+    btnNext: "#next1",
+    btnPrev: "#prev1",
+    visible: 1,   //顯示的張數
+    scroll:1,     //每次滾幾張
+    speed:500,    //滚动速度，单位毫秒
+    auto:5000,    //隔多久自動滾一次
+    circular:true,
+    mouseOver:true,
+	vertical:false
+  });
+  $("#s2").jCarouselLite({
+    btnNext: "#next2",
+    btnPrev: "#prev2",
+    visible: 10,   //顯示的張數
+    scroll:1,     //每次滾幾張
+    speed:800,    //滚动速度，单位毫秒
+    auto:8000,    //隔多久自動滾一次
+    circular:true,
+    mouseOver:true,
+	vertical:false
+  });
+  $("#s3").jCarouselLite({
+    btnNext: "#next2",
+    btnPrev: "#prev2",
+    visible: 6,   //顯示的張數
+    scroll:6,     //每次滾幾張
+    speed:800,    //滚动速度，单位毫秒
+    auto:8000,    //隔多久自動滾一次
+    circular:true,
+    mouseOver:true,
+	vertical:false
+  });
+  $("#s4").jCarouselLite({
+    btnNext: "#next2",
+    btnPrev: "#prev2",
+    visible: 1,   //顯示的張數
+    scroll:1,     //每次滾幾張
+    speed:800,    //滚动速度，单位毫秒
+    auto:8000,    //隔多久自動滾一次
+    circular:true,
+    mouseOver:true,
+	vertical:false
+  });
+});
+</script>
+<!--slider-->
+<script type="text/javascript" src="index-js/away.js"></script>
+
+</head>
+
+<body onload="MM_preloadImages('images/btn-01b.gif','images/btn-02b.gif','images/btn-03b.gif','images/btn-04b.gif','images/btn-05b.gif','images/btn-06b.gif','images/btn-07b.gif','images/btn-08b.gif','images/btn-09b.gif','images/btn-10b.gif','images/btn-menu-01b.gif','images/btn-menu-11b.gif')">
+<div id="all" align="center">
+<div id="wrapper">
+<!--header-->
+<div id="header">
+<div id="logo"><a href="index.html">華得來點數兌換網</a></div>
+<div id="h-right">
+<!--search-->
+<div id="search">
+<ul>
+<li class="s01"><input type="text" accesskey="S" /></li>
+<li><p><input title="Submit for validation" type="submit" value="" accesskey="S"  /></p></li>
+</ul>
+</div>
+<!--search end-->
+<!--phone menu-->
+<div id="m-menu">
+<span class="toggle">Menu</span>
+<nav class="nav">
+<ul>
+<li><a href="#">兌換辦法</a>
+    <ul>
+    <li><a href="content/rule/rule01.html">華得來點數兌換辦法</a></li>
+    <li style="border-bottom:0"><a href="content/rule/rule02.html">信用卡紅利積點活動規範</a></li>
+    </ul>
+</li>
+<li><a href="content/qa/qa01.html">常見問題</a></li>
+<li><a href="content/search-f/search-f01.html">商品查詢</a></li>
+<li><a href="content/search-p/search-p01.html">點數查詢</a></li>
+<!--<li><a href="content/chang-p-list/c-p-l01.html">兌換明細</a></li>-->
+<li><a href="content/code/code01.html">領取點數</a></li>
+<li><a href="content/form/images/bonus.pdf" target="_blank">商品兌換單</a></li>
+<li><a href="content/member/member-b01.html">加入會員</a></li>
+<li style="border-bottom:0"><a href="content/member/member-a01.html">會員登入</a></li>
+</ul>
+</nav>
+<nav class="nav">
+<ul>
+<li><a href="#">全文檢索</a></li>
+</ul>
+</nav>
+<nav class="nav">
+<ul>
+<li><a href="content/product/product-sny.html">Sny會員專區</a></li>
+<li><a href="content/product/product01.html">推薦首選</a></li>
+<li><a href="content/product/product01.html">3C數位</a></li>
+<li><a href="content/product/product01.html">名媛精選</a></li>
+<li><a href="content/product/product01.html">紳士經典</a></li>
+<li><a href="content/product/product01.html">家電嚴選</a></li>
+<li><a href="content/product/product01.html">居家生活</a></li>
+<li><a href="content/product/product01.html">休閒養生</a></li>
+<li><a href="content/product/product01.html">親子記趣</a></li>
+<li><a href="content/product/product01.html">禮票券總匯</a></li>
+<li style="border-bottom:0"><a href="content/product/product01.html">電子票券專區</a></li>
+</ul>
+</nav>
+</div>
+<!--phone menu end-->
+<!--menu-top-->
+<div id="menu-top">
+<ul>
+<li><a href="content/rule/rule01.html" onmouseover="MM_showHideLayers('hide-rule','','show');MM_showHideLayers('hide-all','','show')">兌換辦法</a></li>
+<li><a href="content/qa/qa01.html" onmouseover="MM_showHideLayers('hide-rule','','hide');MM_showHideLayers('hide-all','','show')">常見問題</a></li>
+<li><a href="content/search-f/search-f01.html" onmouseover="MM_showHideLayers('hide-rule','','hide');MM_showHideLayers('hide-all','','show')">商品查詢</a></li>
+<li><a href="content/search-p/search-p01.html" onmouseover="MM_showHideLayers('hide-rule','','hide');MM_showHideLayers('hide-all','','show')">點數查詢</a></li>
+<!--<li><a href="content/chang-p-list/c-p-l01.html" onmouseover="MM_showHideLayers('hide-rule','','hide');MM_showHideLayers('hide-all','','show')">兌換明細</a></li>-->
+<li><a href="content/code/code01.html" onmouseover="MM_showHideLayers('hide-rule','','hide');MM_showHideLayers('hide-all','','show')">領取點數</a></li>
+<li><a href="content/form/images/bonus.pdf" target="_blank" onmouseover="MM_showHideLayers('hide-rule','','hide');MM_showHideLayers('hide-all','','show')">商品兌換單</a></li>
+<li><a href="content/member/member-b01.html" onmouseover="MM_showHideLayers('hide-rule','','hide');MM_showHideLayers('hide-all','','show')">加入會員</a></li>
+<li style="margin-right:0;"><a href="content/member/member-a01.html" onmouseover="MM_showHideLayers('hide-rule','','hide');MM_showHideLayers('hide-all','','show')">會員登入</a></li>
+</ul>
+</div>
+<!--menu-top end-->
+</div>
+<!--hide item-->
+<div id="hide-rule">
+<ul>
+<li><a href="content/rule/rule01.html">華得來點數兌換辦法</a></li>
+<li style="border-bottom:0"><a href="content/rule/rule02.html">信用卡紅利積點活動規範</a></li>
+</ul>
+</div>
+<div id="hide-all">
+<img src="content/images/block.gif" onmouseOver="MM_showHideLayers('hide-rule','','hide','hide-all','','hide')" />
+</div>
+<!--hide item end-->
+</div>
+<!--header end-->
+<!--main-->
+<div id="main">
+<!-- Flexslider_box -->
+<div id="flexslider_box" role="main">
+  <div class="flexslider">
+    <ul class="slides">
+      <li><a href="content/product/product-sny.html"><img src="images/big-ad-sny.jpg" /></a></li>
+      <li><a href="content/product/product01-in.html"><img src="images/big-ad-01.jpg" /></a></li>
+      <li><a href="content/product/product01-in.html"><img src="images/big-ad-02.jpg" /></a></li>
+      <li><a href="content/product/product01-in.html"><img src="images/big-ad-03.jpg" /></a></li>
+      <li><a href="content/product/product01-in.html"><img src="images/big-ad-04.jpg" /></a></li>
+    </ul>
+  </div>
+</div>
+<!-- /Flexslider_box end -->
+<!--news-->
+<div id="news">
+<p><img src="images/icon-news.gif" /></p>
+<marquee onMouseOver="this.stop()" onMouseOut="this.start()" direction="left" scrolldelay="4" scrollamount="2" style="padding:5px 5px 5px 5px; border-bottom:1px #CCC dotted; border-top:1px #CCC dotted; margin-top:5px;">
+<span class="word-redblock" style="color:#F00; margin-right:8px;">2015.12.22</span>財富管理實力再獲肯定！本行勇奪『2015台灣最佳財務策劃師選拔』財富管理個人組「冠軍、亞軍」
+<span class="word-redblock" style="color:#F00; margin-right:8px;">2015.12.22</span>即日起於本行數位銀行Bank3.0平台，開辦「線上約定自動扣繳」服務！
+</marquee>
+</div>
+<!--news end-->
+<!--ez-ad-->
+<div id="ez-ad-choose" style="margin-top:20px;">
+  <label>
+    <select name="select" id="select">
+      <option>推薦首選</option>
+    </select>
+  </label>
+</div>
+<div id="ez-ad">
+<h4 style="border-bottom:2px #CCC solid; padding-bottom:20px;">推薦首選</h4>
+<ul>
+<li><a href="content/product/product01.html"><img src="images/ad-01.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-02.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-03.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-04.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-05.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-06.jpg" /></a></li>
+</ul>
+</div>
+<!--ez-ad end-->
+<!--ez-ad-new-->
+<div id="ez-ad-tai">
+<div id="jCarouselLiteDemo">
+<div id="s4" class="jCarouselLite">
+<ul>
+<li><h4>Sny會員專區</h4></li>
+<li><h4>推薦首選</h4></li>
+<li><h4>3C數位</h4></li>
+<li><h4>名媛精選</h4></li>
+<li><h4>紳士經典</h4></li>
+<li><h4>家電嚴選</h4></li>
+<li><h4>居家生活</h4></li>
+<li><h4>休閒養生</h4></li>
+<li><h4>親子記趣</h4></li>
+<li><h4>禮票券總匯</h4></li>
+<li><h4>電子票券專區</h4></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="ez-ad-new">
+<div id="jCarouselLiteDemo">
+<div class="carouse2">
+<span id="prev2" class="prev"></span>
+<div id="s3" class="jCarouselLite">
+<ul>
+<li><a href="content/product/product01.html"><img src="images/ad-01.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-02.jpg" /></a></li>
+<li><img src="images/ad-sny-01.jpg" /></li>
+<li><img src="images/ad-sny-02.jpg" /></li>
+<li><img src="images/ad-sny-03.jpg" /></li>
+<li><img src="images/ad-sny-04.jpg" /></li>
+<!--sny-->
+<li><a href="content/product/product01.html"><img src="images/ad-01.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-02.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-03.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-04.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-05.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-06.jpg" /></a></li>
+<!--01-->
+<li><a href="content/product/product01.html"><img src="images/ad-01.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-02.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-03.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-04.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-05.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-06.jpg" /></a></li>
+<!--02-->
+<li><a href="content/product/product01.html"><img src="images/ad-01.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-02.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-03.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-04.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-05.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-06.jpg" /></a></li>
+<!--03-->
+<li><a href="content/product/product01.html"><img src="images/ad-01.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-02.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-03.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-04.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-05.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-06.jpg" /></a></li>
+<!--04-->
+<li><a href="content/product/product01.html"><img src="images/ad-01.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-02.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-03.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-04.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-05.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-06.jpg" /></a></li>
+<!--05-->
+<li><a href="content/product/product01.html"><img src="images/ad-01.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-02.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-03.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-04.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-05.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-06.jpg" /></a></li>
+<!--06-->
+<li><a href="content/product/product01.html"><img src="images/ad-01.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-02.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-03.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-04.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-05.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-06.jpg" /></a></li>
+<!--07-->
+<li><a href="content/product/product01.html"><img src="images/ad-01.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-02.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-03.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-04.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-05.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-06.jpg" /></a></li>
+<!--08-->
+<li><a href="content/product/product01.html"><img src="images/ad-01.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-02.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-03.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-04.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-05.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-06.jpg" /></a></li>
+<!--09-->
+<li><a href="content/product/product01.html"><img src="images/ad-01.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-02.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-03.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-04.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-05.jpg" /></a></li>
+<li><a href="content/product/product01.html"><img src="images/ad-06.jpg" /></a></li>
+<!--10-->
+</ul>
+</div>
+<span id="next2" class="next"></span>
+</div>
+</div>
+</div>
+<!--ez-ad-new end-->
+<!--menu-top-->
+<div id="menu-index-scroll-new">
+<div id="jCarouselLiteDemo">
+<div id="s2" class="jCarouselLite">
+<ul>
+<li><a href="content/product/product-sny.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image64','','images/btn-menu-11b.gif',1)"><img src="images/btn-menu-11.gif" name="Image64" border="0" id="Image64" /></a></li>
+<li><a href="content/product/product01.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image54','','images/btn-menu-01b.gif',1)"><img src="images/btn-menu-01.gif" name="Image54" border="0" id="Image54" /></a></li>
+<li><a href="content/product/product01.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image55','','images/btn-menu-02b.gif',1)"><img src="images/btn-menu-02.gif" name="Image55" border="0" id="Image55" /></a></li>
+<li><a href="content/product/product01.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image56','','images/btn-menu-03b.gif',1)"><img src="images/btn-menu-03.gif" name="Image56" border="0" id="Image56" /></a></li>
+<li><a href="content/product/product01.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image57','','images/btn-menu-04b.gif',1)"><img src="images/btn-menu-04.gif" name="Image57" border="0" id="Image57" /></a></li>
+<li><a href="content/product/product01.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image58','','images/btn-menu-05b.gif',1)"><img src="images/btn-menu-05.gif" name="Image58" border="0" id="Image58" /></a></li>
+<li><a href="content/product/product01.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image59','','images/btn-menu-06b.gif',1)"><img src="images/btn-menu-06.gif" name="Image59" border="0" id="Image59" /></a></li>
+<li><a href="content/product/product01.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image60','','images/btn-menu-07b.gif',1)"><img src="images/btn-menu-07.gif" name="Image60" border="0" id="Image60" /></a></li>
+<li><a href="content/product/product01.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image61','','images/btn-menu-08b.gif',1)"><img src="images/btn-menu-08.gif" name="Image61" border="0" id="Image61" /></a></li>
+<li><a href="content/product/product01.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image62','','images/btn-menu-09b.gif',1)"><img src="images/btn-menu-09.gif" name="Image62" border="0" id="Image62" /></a></li>
+<li><a href="content/product/product01.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image63','','images/btn-menu-10b.gif',1)"><img src="images/btn-menu-10.gif" name="Image63" border="0" id="Image63" /></a></li>
+</ul>
+</div>
+</div>
+</div>
+<!--menu-top end-->
+<!--topic-ad-->
+<div id="topic-ad">
+<a name="ad" id="ad"></a>
+<h4>主題活動</h4>
+<div id="topic-ad-01"><a href="content/product/product01.html"><img src="images/ad-topic01.jpg" /></a></div>
+<div id="topic-ad-02"><a href="content/product/product01.html"><img src="images/ad-topic02.jpg" /></a></div>
+<div id="topic-ad-03"><a href="content/product/product01.html"><img src="images/ad-topic03.jpg" /></a></div>
+<div id="topic-ad-04"><a href="content/product/product01.html"><img src="images/ad-topic04.jpg" /></a></div>
+<div id="topic-ad-05"><a href="content/product/product01.html"><img src="images/ad-topic05.jpg" /></a></div>
+<ul>
+<li><a href="#ad" onmouseover="MM_showHideLayers('topic-ad-01','','show');MM_showHideLayers('topic-ad-02','','hide','topic-ad-03','','hide','topic-ad-04','','hide','topic-ad-05','','hide')">1</a></li>
+<li><a href="#ad" onmouseover="MM_showHideLayers('topic-ad-02','','show');MM_showHideLayers('topic-ad-01','','hide','topic-ad-03','','hide','topic-ad-04','','hide','topic-ad-05','','hide')">2</a></li>
+<li><a href="#ad" onmouseover="MM_showHideLayers('topic-ad-03','','show');MM_showHideLayers('topic-ad-01','','hide','topic-ad-02','','hide','topic-ad-04','','hide','topic-ad-05','','hide')">3</a></li>
+<li><a href="#ad" onmouseover="MM_showHideLayers('topic-ad-04','','show');MM_showHideLayers('topic-ad-01','','hide','topic-ad-02','','hide','topic-ad-03','','hide','topic-ad-05','','hide')">4</a></li>
+<li><a href="#ad" onmouseover="MM_showHideLayers('topic-ad-05','','show');MM_showHideLayers('topic-ad-01','','hide','topic-ad-02','','hide','topic-ad-03','','hide','topic-ad-04','','hide')">5</a></li>
+</ul>
+</div>
+<!--topic-ad end-->
+<!--slider-->
+<div class="sliderBox">
+<h4>熱門商品</h4>
+  <ul class="list status">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <div class="slider">
+    <ul class="list">
+      <li><a href="content/product/product01-in.html"><img src="images/s-ad-01.jpg" /></a><p style="text-align:center;"><a href="#">A.緊緻修護露/24h活膚霜緊緻修護露/24h活膚霜</a></p></li>
+      <li><a href="content/product/product01-in.html"><img src="images/s-ad-02.jpg" /></a><p style="text-align:center;"><a href="#">A.喬治傑生 愛心聚寶盒</a></p></li>
+      <li><a href="content/product/product01-in.html"><img src="images/s-ad-03.jpg" /></a><p style="text-align:center;"><a href="#">A.勳風 凍齡雕塑按摩儀</a></p></li>
+      <li><a href="content/product/product01-in.html"><img src="images/s-ad-04.jpg" /></a><p style="text-align:center;"><a href="#">A.聲寶音樂按摩枕</a></p></li>
+      <li><a href="content/product/product01-in.html"><img src="images/s-ad-05.jpg" /></a><p style="text-align:center;"><a href="#">A.Kitty 烤麵包機</a></p></li>
+      <li><a href="content/product/product01-in.html"><img src="images/s-ad-06.jpg" /></a><p style="text-align:center;"><a href="#">A.聲寶鏡面體重計</a></p></li>
+      <li><a href="content/product/product01-in.html"><img src="images/s-ad-01.jpg" /></a><p style="text-align:center;"><a href="#">B.緊緻修護露/24h活膚霜緊緻修護露/24h活膚霜</a></p></li>
+      <li><a href="content/product/product01-in.html"><img src="images/s-ad-02.jpg" /></a><p style="text-align:center;"><a href="#">B.喬治傑生 愛心聚寶盒</a></p></li>
+      <li><a href="content/product/product01-in.html"><img src="images/s-ad-03.jpg" /></a><p style="text-align:center;"><a href="#">B.勳風 凍齡雕塑按摩儀</a></p></li>
+      <li><a href="content/product/product01-in.html"><img src="images/s-ad-04.jpg" /></a><p style="text-align:center;"><a href="#">B.聲寶音樂按摩枕</a></p></li>
+      <li><a href="content/product/product01-in.html"><img src="images/s-ad-05.jpg" /></a><p style="text-align:center;"><a href="#">B.Kitty 烤麵包機</a></p></li>
+      <li><a href="content/product/product01-in.html"><img src="images/s-ad-06.jpg" /></a><p style="text-align:center;"><a href="#">C.聲寶鏡面體重計</a></p></li>
+      <li><a href="content/product/product01-in.html"><img src="images/s-ad-01.jpg" /></a><p style="text-align:center;"><a href="#">C.緊緻修護露/24h活膚霜緊緻修護露/24h活膚霜</a></p></li>
+      <li><a href="content/product/product01-in.html"><img src="images/s-ad-02.jpg" /></a><p style="text-align:center;"><a href="#">C.喬治傑生 愛心聚寶盒</a></p></li>
+      <li><a href="content/product/product01-in.html"><img src="images/s-ad-03.jpg" /></a><p style="text-align:center;"><a href="#">C.勳風 凍齡雕塑按摩儀</a></p></li>
+      <li><a href="content/product/product01-in.html"><img src="images/s-ad-04.jpg" /></a><p style="text-align:center;"><a href="#">C.聲寶音樂按摩枕</a></p></li>
+      <li><a href="content/product/product01-in.html"><img src="images/s-ad-05.jpg" /></a><p style="text-align:center;"><a href="#">C.Kitty 烤麵包機</a></p></li>
+      <li><a href="content/product/product01-in.html"><img src="images/s-ad-06.jpg" /></a><p style="text-align:center;"><a href="#">C.聲寶鏡面體重計</a></p></li>
+    </ul>
+  </div>
+</div>
+<!--slider end-->
+<!--s-ad-->
+<div id="s-ad">
+<h4>熱門商品</h4>
+<ul>
+<li><a href="content/product/product01-in.html"><img src="images/s-ad-01.jpg" /></a><p><a href="#">緊緻修護露/24h活膚霜緊緻修護露/24h活膚霜緊緻修護露/24h活膚霜</a></p></li>
+<li><a href="content/product/product01-in.html"><img src="images/s-ad-02.jpg" /></a><p><a href="#">喬治傑生 愛心聚寶盒</a></p></li>
+<li><a href="content/product/product01-in.html"><img src="images/s-ad-03.jpg" /></a><p><a href="#">勳風 凍齡雕塑按摩儀</a></p></li>
+<li><a href="content/product/product01-in.html"><img src="images/s-ad-04.jpg" /></a><p><a href="#">聲寶音樂按摩枕</a></p></li>
+<li><a href="content/product/product01-in.html"><img src="images/s-ad-05.jpg" /></a><p><a href="#">Kitty 烤麵包機</a></p></li>
+<li><a href="content/product/product01-in.html"><img src="images/s-ad-06.jpg" /></a><p><a href="#">聲寶鏡面體重計</a></p></li>
+</ul>
+</div>
+<div id="s-ad2">
+<ul>
+<li><a href="content/product/product01-in.html"><img src="images/s-ad-01.jpg" /></a><p><a href="#">緊緻修護露/24h活膚霜緊緻修護露/24h活膚霜緊緻修護露/24h活膚霜</a></p></li>
+<li><a href="content/product/product01-in.html"><img src="images/s-ad-02.jpg" /></a><p><a href="#">喬治傑生 愛心聚寶盒</a></p></li>
+<li><a href="content/product/product01-in.html"><img src="images/s-ad-03.jpg" /></a><p><a href="#">勳風 凍齡雕塑按摩儀</a></p></li>
+<li><a href="content/product/product01-in.html"><img src="images/s-ad-04.jpg" /></a><p><a href="#">聲寶音樂按摩枕</a></p></li>
+<li><a href="content/product/product01-in.html"><img src="images/s-ad-05.jpg" /></a><p><a href="#">Kitty 烤麵包機</a></p></li>
+<li><a href="content/product/product01-in.html"><img src="images/s-ad-06.jpg" /></a><p><a href="#">聲寶鏡面體重計</a></p></li>
+</ul>
+</div>
+<!--s-ad end-->
+</div>
+<!--main end-->
+</div>
+<!--footer-->
+<div id="footer">
+<p>建議瀏覽器版本為IE9以後版本，並將語系設為中文Big5，以獲得最佳瀏覽效果。</p>
+<p>顧客服務專線：華南銀行：(02)2181-0101、華南永昌證券：412-8889、華南產險：(02)2761-6969 / 0800-010850、華南期貨02-27180000</p>
+<p>本網站由瑪奇朵股份有限公司建置維護</p>
+</p>
+</div>
+<!--footer end-->
+</div>
+<!--QRcode-->
+<div id="QRcode"></div>
+<!--QRcode end-->
+<!--Sny-r-spic-->
+<div id="sny-r-spic"><a href="content/product/product-sny.html"><img src="content/images/sny-right-spic.png" /></a></div>
+<!--Sny-r-spic end-->
+<!--gotop-->
+<div id="gotop">
+<ul class="links">
+<li><a href="#">TOP</a></li>
+</ul>
+</div>
+<!--gotop end-->
+</body>
+</html>

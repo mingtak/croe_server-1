@@ -1,0 +1,320 @@
+/*---------- 大圖輪播 -----------*/
+#big-ad{
+	width:100%;
+	height:450px;
+	float:left;
+	margin-bottom:20px;
+}
+#big-ad img{
+	width:100%;
+	height:auto
+}
+#jCarouselLiteDemo {
+	clear:both;
+	float:left;
+	width:100%;
+}
+#jCarouselLiteDemo .carousel {
+	width:100%;
+	float:left;
+}
+#jCarouselLiteDemo .carousel SPAN.prev {
+	display:block;
+	background:url(../../images/icon-01.png);
+	background-position:center;
+	background-repeat:no-repeat;
+	position:absolute;
+	width:22px;
+	height:37px;
+	z-index:50;
+	left: 50px;
+	top: 300px;
+	text-indent:-9999px;
+}
+#jCarouselLiteDemo .carousel SPAN.next {
+	display:block;
+	background:url(../../images/icon-02.png);
+	background-position:center;
+	background-repeat:no-repeat;
+	position:absolute;
+	width:22px;
+	height:37px;
+	z-index:50;
+	left: 930px;
+	top: 300px;
+	text-indent:-9999px;
+}
+#jCarouselLiteDemo .carousel .jCarouselLite {
+	FLOAT: left;
+	POSITION: relative;
+	VISIBILITY: hidden;
+	LEFT: -5000px
+}
+#jCarouselLiteDemo .carousel UL {
+	width:100%;
+}
+#jCarouselLiteDemo .carousel LI {
+	width:100%;
+	height:auto;
+	margin-bottom:20px;
+	padding:0;
+	float:left;
+}
+#jCarouselLiteDemo .carousel LI IMG {
+	width:100%;
+	height:auto;
+}
+
+
+#ez-ad{
+	width:100%;
+	clear:both;
+	float:left;
+	margin-top:10px;
+	padding-bottom:20px;
+}
+#ez-ad ul {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+#ez-ad li {
+	width:15.5%;
+	list-style-type:none;
+	display:block;
+	float:left;
+	padding-left:0.54%;
+	padding-right:0.54%;
+}
+#ez-ad li img {
+	width:100%;
+}
+#ez-ad-choose{
+	display:none;
+}
+#menu-index{
+	width:100%;
+	clear:both;
+	float:left;
+	padding-bottom:20px;
+	border-bottom:2px #CCC solid;
+}
+#menu-index ul {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+#menu-index li {
+	width:8px;
+	list-style-type:none;
+	display:block;
+	float:left;
+}
+#menu-index-scroll{
+	width:930px;
+	float:left;
+}
+#menu-index-scroll ul {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+#menu-index-scroll li {
+	width:auto;
+	height:73px;
+	list-style-type:none;
+	display:block;
+	float:left;
+	padding-left:16px;
+	padding-right:16px;
+	border-right:1px #CCC solid;
+}
+#news{
+	width:100%;
+	height:auto;
+	clear:both;
+	float:left;
+	margin-top:20px;
+
+}
+/*---------- slider -----------*/
+.list{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
+.sliderBox{
+	width:100%;
+	clear:both;
+	float:left;
+	margin-top:30px;
+	overflow:hidden;
+}
+.slider{
+	width:100%;
+	height:165px;
+	overflow:hidden;
+	position:relative;
+	float:left;
+}
+.slider ul{
+	overflow:hidden;
+	position:absolute;
+	list-style-type:none;
+	float:left;
+	margin:0;
+	padding:0;
+	width:3000px;
+}
+.slider li{
+	width:145px;
+	list-style-type:none;
+	display:block;
+	float:left;
+	margin-right:14px;
+	margin-bottom:5px;
+}
+.slider li img{
+	width:98%;
+	border:1px #CCC solid;
+}
+.slider a{
+	display:inline-block;
+	float:left;
+	overflow:hidden;
+}
+.status{
+	text-align:center;
+	float:left;
+	margin:0;
+}
+.status li{
+	cursor:pointer;
+	background:#FFF;
+	display:inline-block;
+	text-indent:-9999px;
+	border:1px solid #CCC;
+	width:8px;
+	height:8px;
+	border-radius:100%;
+	margin:0 3px;
+}
+.status li.now{
+	background:#FB0006;
+	border-color:#999;
+}
+
+
+@media only screen and (max-width:800px) {
+
+#big-ad{
+	width:100%;
+	height:auto;
+	float:left;
+	margin-bottom:0;
+}
+#jCarouselLiteDemo .carousel SPAN.prev {
+	display:block;
+	background:url(../../images/icon-01.png);
+	background-position:center;
+	background-repeat:no-repeat;
+	position:absolute;
+	width:22px;
+	height:37px;
+	z-index:50;
+	left: 5%;
+	top: 230px;
+	text-indent:-9999px;
+}
+#jCarouselLiteDemo .carousel SPAN.next {
+	display:block;
+	background:url(../../images/icon-02.png);
+	background-position:center;
+	background-repeat:no-repeat;
+	position:absolute;
+	width:22px;
+	height:37px;
+	z-index:50;
+	left: 92%;
+	top: 230px;
+	text-indent:-9999px;
+}
+#menu-index{
+	display:none;
+}
+#ez-ad{
+	width:100%;
+	clear:both;
+	float:left;
+	margin-top:10px;
+	padding-bottom:20px;
+	border-bottom:2px #CCC solid;
+}
+#ez-ad h4{
+	display:none;
+}
+#ez-ad-choose{
+	display:block;
+	width:100%;
+	float:left;
+	border-bottom:2px #CCC solid;
+	padding-bottom:10px;
+	margin-bottom:20px;
+}
+/*---------- slider -----------*/
+.sliderBox{
+	display:none;
+}
+	}
+
+
+/*手機板*/
+@media only screen and (max-width:570px) {
+#jCarouselLiteDemo {
+	clear:both;
+	float:left;
+	width:99%;
+}
+#jCarouselLiteDemo .carousel SPAN.prev {
+	display:block;
+	background:url(../../images/icon-01.png);
+	background-position:center;
+	background-repeat:no-repeat;
+	position:absolute;
+	width:22px;
+	height:37px;
+	z-index:50;
+	left: 5%;
+	top: 160px;
+	text-indent:-9999px;
+}
+#jCarouselLiteDemo .carousel SPAN.next {
+	display:block;
+	background:url(../../images/icon-02.png);
+	background-position:center;
+	background-repeat:no-repeat;
+	position:absolute;
+	width:22px;
+	height:37px;
+	z-index:50;
+	left: 88%;
+	top: 160px;
+	text-indent:-9999px;
+}
+#menu-index{
+	display:none;
+}
+#ez-ad li {
+	width:47%;
+	list-style-type:none;
+	display:block;
+	float:left;
+	padding-left:1.5%;
+	padding-right:1.5%;
+	margin-bottom:15px;
+}
+#ez-ad li img {
+	border:1px #CCC solid;
+}
+	}

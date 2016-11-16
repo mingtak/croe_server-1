@@ -1,0 +1,191 @@
+@charset "utf-8";
+/* =============================================================================
+   BASIC
+   ========================================================================== */
+html, body { margin:0px; padding:0px; height:100%; }
+body, th, td, input { font-family:"Hiragino Kaku Gothic Pro","微軟正黑體","Microsoft Jhenghei",Helvetica,Arial,sans-serif; font-size:14px; line-height: 120%; }
+a{ text-decoration: none;}
+b{ font-weight:normal;}
+p{ line-height:2em; margin:0; padding:0;}
+h1,h2,h3,h4,h5,h6{ font-weight:400;}
+h1{ font-size:40px; font-family:"Hiragino Kaku Gothic Pro","微軟正黑體","Microsoft Jhenghei",Helvetica,Arial,sans-serif; }
+h2{ font-size:30px; font-family:"Hiragino Kaku Gothic Pro","微軟正黑體","Microsoft Jhenghei",Helvetica,Arial,sans-serif; line-height: 140%; font-weight:bolder; }
+h3{ font-size:18px; font-family:"Hiragino Kaku Gothic Pro","微軟正黑體","Microsoft Jhenghei",Helvetica,Arial,sans-serif; line-height: 120%; font-weight:bold; }
+h4{ font-size:16px; font-family:"Hiragino Kaku Gothic Pro","微軟正黑體","Microsoft Jhenghei",Helvetica,Arial,sans-serif; font-weight:bolder; line-height:0;}
+h5{ font-family:"Hiragino Kaku Gothic Pro","微軟正黑體","Microsoft Jhenghei",Helvetica,Arial,sans-serif; }
+h6{ font-family:"Hiragino Kaku Gothic Pro","微軟正黑體","Microsoft Jhenghei",Helvetica,Arial,sans-serif; }
+a:link, a:visited { text-decoration:none; cursor:pointer; }
+table,th,td { margin:0; padding:0; border:none; outline:none; border-collapse:collapse; border-spacing:0; }
+body {
+	background:url(images/bg.gif);
+	background-color:#e50012;
+}
+/*----------------- Font --------------------*/
+.word-red {
+	font-size:100%;
+	color:#e50012;
+}
+.word-big-red {
+	font-size:120%;
+	color:#e50012;
+	font-weight:bolder;
+}
+.word-big-blue {
+	font-size:140%;
+	color:#23a7c8;
+	font-weight:bolder;
+	text-align:center;
+	border-bottom:1px #23a7c8 solid;
+}
+.word-white {
+	font-size:100%;
+	color:#FFF;
+}
+/*----------------- link --------------------*/
+
+/*----------------- 最外層包裝 --------------------*/
+#wrapper {
+	width: 1000px;
+	position:relative;
+	text-align:left;
+}
+/*----------------- content --------------------*/
+#index{
+	width:100%;
+	float:left;
+	border:1px #FC0 solid;
+}
+#fb-icon {
+	position:absolute;
+	width:44px;
+	height:43px;
+	z-index: 1;
+	top:830px;
+	left:30px;
+}
+#btn {
+	position: absolute;
+	width:540px;
+	z-index: 1;
+	left:230px;	
+	top:660px;
+}
+#btn-in {
+	position: absolute;
+	width:540px;
+	z-index: 1;
+	left:350px;	
+	top:60px;
+}
+#content{
+	width:100%;
+	float:left;
+	border:1px #FC0 solid;
+}
+#in-banner{
+	width:100%;
+	float:left;
+}
+#main-01{
+	width:100%;
+	height:602px;
+	float:left;
+	background:url(images/main-bg-01.jpg);
+}
+#main-02{
+	width:100%;
+	height:602px;
+	float:left;
+	background:url(images/yes-bg.gif);
+}
+#main-03{
+	width:100%;
+	height:602px;
+	float:left;
+	background:url(images/no-bg.gif);
+}
+#card{
+	width:314px;
+	float:left;
+	margin-top:105px;
+	margin-left:120px;
+}
+#question{
+	width:700px;
+	float:left;
+	border:3px #ffd51a solid;
+	border-radius:15px;
+	margin-top:105px;
+	margin-left:100px;
+	background:#FFF;
+	padding:10px 30px 10px 30px;
+}
+#form{
+	width:700px;
+	float:left;
+	border:3px #ffd51a solid;
+	border-radius:15px;
+	margin-top:80px;
+	margin-left:100px;
+	background:#FFF;
+	padding:10px 30px 10px 30px;
+}
+#form table {
+	width:100%;
+	font-family:Arial, Helvetica, sans-serif;
+	padding:0;
+	margin:0;
+	text-align:left;
+}
+#form th {
+	padding:10px 4px 10px 4px;
+	border-bottom:1px #CCC dotted;
+}
+#form td {
+	padding:10px 4px 10px 4px;
+	border-bottom:1px #CCC dotted;
+}
+#form ul {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+#form li {
+	width:97%;
+	list-style-type:none;
+	clear:both;
+	float:left;
+	background:url(images/icon-02.gif);
+	background-position:left top;
+	background-repeat:no-repeat;
+	border-bottom:1px #CCCCCC dashed;
+	padding-left:20px;
+	padding-bottom:8px;
+	padding-top:8px;
+	line-height:2em;
+}
+#form li ol {
+	width:100%;
+	padding:0;
+	margin:0;
+}
+#form li ol li{
+	width:100%;
+	list-style-type:decimal;
+	clear:both;
+	float:left;
+	background:none;
+	border-bottom:1px #CCCCCC dashed;
+	padding-left:0px;
+	padding-bottom:8px;
+	padding-top:8px;
+	line-height:2em;
+}
+/*----------------- footer --------------------*/
+#footer{
+	width:100%;
+	height:82px;
+	clear:both;
+	float:left;
+	background:url(images/footer-bg.gif);
+}

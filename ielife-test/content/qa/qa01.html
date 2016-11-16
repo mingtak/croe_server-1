@@ -1,0 +1,511 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/tmp.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>華得來點數兌換網</title>
+<!-- InstanceEndEditable -->
+<meta name="viewport" content="width=device-width; initial-scale=1.0;">
+<!--控制手機版選單-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $(".toggle").click(function() {
+        $(this).toggleClass("active");
+        $(".nav").slideToggle();
+    });
+    $(".nav > ul > li:has(ul) > a").append('<div class="arrow-bottom"></div>');
+});
+</script>
+<script type="text/javascript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+function MM_showHideLayers() { //v9.0
+  var i,p,v,obj,args=MM_showHideLayers.arguments;
+  for (i=0; i<(args.length-2); i+=3) 
+  with (document) if (getElementById && ((obj=getElementById(args[i]))!=null)) { v=args[i+2];
+    if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v=='hide')?'hidden':v; }
+    obj.visibility=v; }
+}
+//-->
+</script>
+<link href="../css/web.css" rel="stylesheet" type="text/css" />
+<!-- InstanceBeginEditable name="css-link" -->
+<link href="../css/qa.css" rel="stylesheet" type="text/css" />
+<!--滑出式問與答(Q&A)清單-->
+<script type="text/javascript" src="js/jquery.min__.js"></script>
+<script type="text/javascript">
+	$(function(){
+		// 幫 div.qa_title 加上 hover 及 click 事件
+		// 同時把兄弟元素 div.qa_content 隱藏起來
+		$('#qaContent ul.accordionPart li div.qa_title').hover(function(){
+			$(this).addClass('qa_title_on');
+		}, function(){
+			$(this).removeClass('qa_title_on');
+		}).click(function(){
+			// 當點到標題時，若答案是隱藏時則顯示它，同時隱藏其它已經展開的項目
+			// 反之則隱藏
+			var $qa_content = $(this).next('div.qa_content');
+			if(!$qa_content.is(':visible')){
+				$('#qaContent ul li div.qa_content:visible').slideUp();
+			}
+			$qa_content.slideToggle();
+		}).siblings().addClass('qa_content').hide();
+		// 全部展開
+		$('#qaContent .qa_showall').click(function(){
+			$('#qaContent ul.accordionPart li div.qa_content').slideDown();
+			return false;
+		});
+
+		// 全部隱藏
+		$('#qaContent .qa_hideall').click(function(){
+			$('#qaContent ul.accordionPart li div.qa_content').slideUp();
+			return false;
+		});
+
+		// 關閉
+		$('#qaContent .close_qa').click(function(){
+			$(this).parents('.qa_content').prev().click();
+			return false;
+		});
+	});
+</script>
+<!-- InstanceEndEditable -->
+
+</head>
+
+<body onload="MM_preloadImages('../images/btn-01b.gif','../images/btn-02b.gif','../images/btn-03b.gif','../images/btn-04b.gif','../images/btn-05b.gif','../images/btn-06b.gif','../images/btn-07b.gif','../images/btn-08b.gif','../images/btn-09b.gif','../images/btn-10b.gif','../images/btn-11b.gif')">
+<div id="all" align="center">
+<div id="wrapper">
+<!--header-->
+<div id="header">
+<div id="logo"><a href="../../index.html">華得來點數兌換網</a></div>
+<div id="h-right">
+<!--search-->
+<div id="search">
+<ul>
+<li class="s01"><input type="text" accesskey="S" /></li>
+<li><p><input title="Submit for validation" type="submit" value="" accesskey="S"  /></p></li>
+</ul>
+</div>
+<!--search end-->
+<!--phone menu-->
+<div id="m-menu">
+<span class="toggle">Menu</span>
+<nav class="nav">
+<ul>
+<li><a href="#">兌換辦法</a>
+    <ul>
+    <li><a href="../rule/rule01.html">華得來點數兌換辦法</a></li>
+    <li style="border-bottom:0"><a href="../rule/rule02.html">信用卡紅利積點活動規範</a></li>
+    </ul>
+</li>
+<li><a href="qa01.html">常見問題</a></li>
+<li><a href="../search-f/search-f01.html">商品查詢</a></li>
+<li><a href="../search-p/search-p01.html">點數查詢</a></li>
+<!--<li><a href="content/chang-p-list/c-p-l01.html">兌換明細</a></li>-->
+<li><a href="../code/code01.html">領取點數</a></li>
+<li><a href="../form/images/bonus.pdf" target="_blank">商品兌換單</a></li>
+<li><a href="../member/member-b01.html">加入會員</a></li>
+<li style="border-bottom:0"><a href="../member/member-a01.html">會員登入</a></li>
+</ul>
+</nav>
+<nav class="nav">
+<ul>
+<li><a href="#">全文檢索</a></li>
+</ul>
+</nav>
+<nav class="nav">
+<ul>
+<li><a href="../product/product01.html">推薦首選</a></li>
+<li><a href="../product/product01.html">3C數位</a></li>
+<li><a href="../product/product01.html">名媛精選</a></li>
+<li><a href="../product/product01.html">紳士經典</a></li>
+<li><a href="../product/product01.html">家電嚴選</a></li>
+<li><a href="../product/product01.html">居家生活</a></li>
+<li><a href="../product/product01.html">休閒養生</a></li>
+<li><a href="../product/product01.html">親子記趣</a></li>
+<li><a href="../product/product01.html">禮票券總匯</a></li>
+<li style="border-bottom:0"><a href="../product/product01.html">電子票券專區</a></li>
+</ul>
+</nav>
+</div>
+<!--phone menu end-->
+<!--menu-top-->
+<div id="menu-top">
+<ul>
+<li><a href="../rule/rule01.html" onmouseover="MM_showHideLayers('hide-rule','','show');MM_showHideLayers('hide-all','','show')">兌換辦法</a></li>
+<li><a href="qa01.html" onmouseover="MM_showHideLayers('hide-rule','','hide');MM_showHideLayers('hide-all','','show')">常見問題</a></li>
+<li><a href="../search-f/search-f01.html" onmouseover="MM_showHideLayers('hide-rule','','hide');MM_showHideLayers('hide-all','','show')">商品查詢</a></li>
+<li><a href="../search-p/search-p01.html" onmouseover="MM_showHideLayers('hide-rule','','hide');MM_showHideLayers('hide-all','','show')">點數查詢</a></li>
+<!--<li><a href="../content/chang-p-list/c-p-l01.html" onmouseover="MM_showHideLayers('hide-rule','','hide');MM_showHideLayers('hide-all','','show')">兌換明細</a></li>-->
+<li><a href="../code/code01.html" onmouseover="MM_showHideLayers('hide-rule','','hide');MM_showHideLayers('hide-all','','show')">領取點數</a></li>
+<li><a href="../form/images/bonus.pdf" target="_blank" onmouseover="MM_showHideLayers('hide-rule','','hide');MM_showHideLayers('hide-all','','show')">商品兌換單</a></li>
+<li><a href="../member/member-b01.html" onmouseover="MM_showHideLayers('hide-rule','','hide');MM_showHideLayers('hide-all','','show')">加入會員</a></li>
+<li style="margin-right:0;"><a href="../member/member-a01.html" onmouseover="MM_showHideLayers('hide-rule','','hide');MM_showHideLayers('hide-all','','show')">會員登入</a></li>
+</ul>
+</div>
+<!--menu-top end-->
+</div>
+<!--hide item-->
+<div id="hide-rule">
+<ul>
+<li><a href="../rule/rule01.html">華得來點數兌換辦法</a></li>
+<li style="border-bottom:0"><a href="../rule/rule02.html">信用卡紅利積點活動規範</a></li>
+</ul>
+</div>
+<div id="hide-all">
+<img src="../images/block.gif" onmouseOver="MM_showHideLayers('hide-rule','','hide','hide-all','','hide')" />
+</div>
+<!--hide item end-->
+</div>
+<!--header end-->
+<!--main-->
+<div id="main">
+<!--menu-left-->
+<div id="menu-left">
+<ul>
+<li><a href="../product/product01.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image22','','../images/btn-11b.gif',1)"><img src="../images/btn-11.gif" name="Image22" border="0" id="Image22" /></a></li>
+<li><a href="../product/product01.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image12','','../images/btn-01b.gif',1)"><img src="../images/btn-01.gif" name="Image12" border="0" id="Image12" /></a></li>
+<li><a href="../product/product01.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image13','','../images/btn-02b.gif',1)"><img src="../images/btn-02.gif" name="Image13" border="0" id="Image13" /></a></li>
+<li><a href="../product/product01.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image14','','../images/btn-03b.gif',1)"><img src="../images/btn-03.gif" name="Image14" border="0" id="Image14" /></a></li>
+<li><a href="../product/product01.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image15','','../images/btn-04b.gif',1)"><img src="../images/btn-04.gif" name="Image15" border="0" id="Image15" /></a></li>
+<li><a href="../product/product01.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image16','','../images/btn-05b.gif',1)"><img src="../images/btn-05.gif" name="Image16" border="0" id="Image16" /></a></li>
+<li><a href="../product/product01.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image17','','../images/btn-06b.gif',1)"><img src="../images/btn-06.gif" name="Image17" border="0" id="Image17" /></a></li>
+<li><a href="../product/product01.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image18','','../images/btn-07b.gif',1)"><img src="../images/btn-07.gif" name="Image18" border="0" id="Image18" /></a></li>
+<li><a href="../product/product01.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image19','','../images/btn-08b.gif',1)"><img src="../images/btn-08.gif" name="Image19" border="0" id="Image19" /></a></li>
+<li><a href="../product/product01.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image20','','../images/btn-09b.gif',1)"><img src="../images/btn-09.gif" name="Image20" border="0" id="Image20" /></a></li>
+<li style="border-bottom:0"><a href="../product/product01.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image21','','../images/btn-10b.gif',1)"><img src="../images/btn-10.gif" name="Image21" border="0" id="Image21" /></a></li>
+</ul>
+</div>
+<!--menu-left end-->
+<!--content-->
+<div id="content">
+<!-- InstanceBeginEditable name="main-content" -->
+<div id="root"><a href="../../index.html"><img src="../images/icon-home.gif" /></a> &gt; 常見問題</div>
+<div id="qa-item">
+<ul>
+<li><a href="#01">點數</a></li>
+<li><a href="#02">註冊</a></li>
+<li><a href="#03">兌換</a></li>
+<li><a href="#04">客服</a></li>
+</ul>
+</div>
+<!--01-->
+<div id="qaContent">
+<a name="01" id="01"></a>
+<div id="qa-q">點數</div>
+<ul class="accordionPart">
+<li>
+<div class="qa_title">什麼是「華得來」？</div>
+<div class="qa_content">
+<p>1. 華南金融集團為回饋客戶，提供客戶購買特定金融商品即可得到相對應之「華得來」點數。</p>
+<p>2. 「華得來」點數還可以與華南銀行信用卡紅利點數合併使用兌換商品或服務，「華得來」點數與紅利點數之兌換比例為1:1。</p>
+</div>
+</li>
+<li>
+<div class="qa_title">如何獲得「華得來」點數？</div>
+<div class="qa_content">
+<p>客戶購買下列金融商品或辦理業務，即可得到「華得來」點數：</p>
+<p>1. <strong>華南銀行：</strong>保管箱、黃金存摺、人身保險、申辦網銀、行動網銀、數位銀行Bank3.0服務及網銀跨行轉帳。</p>
+<p>2. <strong>華南永昌證券：</strong>證券(含複委託及權證)及期貨(含選擇權)。</p>
+<p>3. <strong>華南產險：</strong>強制險、傷害險及健康險。</p>
+</div>
+</li>
+<li>
+<div class="qa_title">「華得來」點數的贈點比率？</div>
+<div class="qa_content">
+<p><strong>華南銀行： </strong></p>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="30%" align="center" bgcolor="#FFD2D2" class="word-orange">產品名稱</td>
+    <td width="50%" align="center" bgcolor="#FFD2D2" class="word-orange">交易條件</td>
+    <td width="20%" align="center" bgcolor="#FFD2D2" class="word-orange">點數</td>
+  </tr>
+  <tr>
+    <td align="center">保管箱</td>
+    <td align="center">新承租戶且未打折者（續租戶不贈點），年租金超過1,500元。</td>
+    <td align="center">5,000點</td>
+  </tr>
+  <tr>
+    <td rowspan="2" align="center" bgcolor="#F0F0F0">黃金存摺</td>
+    <td align="center" bgcolor="#F0F0F0">開戶完成</td>
+    <td align="center" bgcolor="#F0F0F0">400點</td>
+  </tr>
+  <tr>
+    <td align="center" bgcolor="#F0F0F0">定期定額扣帳</td>
+    <td align="center" bgcolor="#F0F0F0">200點</td>
+  </tr>
+  <tr>
+    <td align="center">人身保險</td>
+    <td align="center">依件數贈送點數<span class="word-gray">(註1)</span></td>
+    <td align="center">1,500點</td>
+  </tr>
+  <tr>
+    <td align="center" bgcolor="#F0F0F0">申辦網銀</td>
+    <td align="center" bgcolor="#F0F0F0">開通網銀</td>
+    <td align="center" bgcolor="#F0F0F0">20點<span class="word-gray">(註2)</span></td>
+  </tr>
+  <tr>
+    <td align="center">行動網銀</td>
+    <td align="center">開通行動網銀</td>
+    <td align="center">20點<span class="word-gray">(註2)</span></td>
+  </tr>
+  <tr>
+    <td rowspan="3" align="center" bgcolor="#F0F0F0">數位銀行Bank3.0</td>
+    <td align="center" bgcolor="#F0F0F0">申辦網路銀行</td>
+    <td align="center" bgcolor="#F0F0F0">20點<span class="word-gray">(註2)</span></td>
+  </tr>
+  <tr>
+    <td align="center" bgcolor="#F0F0F0">申請電子綜合對帳單</td>
+    <td align="center" bgcolor="#F0F0F0">20點<span class="word-gray">(註2)</span></td>
+  </tr>
+  <tr>
+    <td align="center" bgcolor="#F0F0F0">申請停車費代扣繳</td>
+    <td align="center" bgcolor="#F0F0F0">20點<span class="word-gray">(註2)</span></td>
+  </tr>
+  <tr>
+    <td align="center">網銀跨行轉帳</td>
+    <td align="center">限ATM機制，該筆交易已享優惠者不再贈點。</td>
+    <td align="center">5點</td>
+  </tr>
+</table>
+<p class="word-gray">註1：人身保險於次月15日結算前月件數，結算時無取消、契約撤銷等狀況</p>
+<p class="word-gray">註2：半年內重新申辦網銀、行動網銀及數位銀行Bank3.0服務不再贈點</p>
+<p style="margin-top:20px;"><strong>華南永昌證券： </strong></p>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="30%" align="center" bgcolor="#FFD2D2" class="word-orange">產品名稱</td>
+    <td width="50%" align="center" bgcolor="#FFD2D2" class="word-orange">交易條件</td>
+    <td width="20%" align="center" bgcolor="#FFD2D2" class="word-orange">點數</td>
+  </tr>
+  <tr>
+    <td align="center">台股交易</td>
+    <td align="center">每成交10,000元。</td>
+    <td align="center">1點</td>
+  </tr>
+  <tr>
+    <td rowspan="2" align="center" bgcolor="#F0F0F0">期貨/選擇權交易</td>
+    <td align="center" bgcolor="#F0F0F0">大台：每成交一口</td>
+    <td align="center" bgcolor="#F0F0F0">10點</td>
+  </tr>
+  <tr>
+    <td align="center" bgcolor="#F0F0F0">小台/選擇權：每成交一口</td>
+    <td align="center" bgcolor="#F0F0F0">5點</td>
+  </tr>
+  <tr>
+    <td align="center">複委託交易</td>
+    <td align="center">每成交約當NTD$10,000元。</td>
+    <td align="center">1點</td>
+  </tr>
+</table>
+<p class="word-gray">註3：證券相關交易(證券交易(含權證)及複委託交易限手續費5折以上之交易)須申辦交易商品之電子對帳單，始得獲贈點數。</p>
+<p style="margin-top:20px;"><strong>華南產險：</strong></p>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="30%" align="center" bgcolor="#FFD2D2" class="word-orange">產品名稱</td>
+    <td width="50%" align="center" bgcolor="#FFD2D2" class="word-orange">交易條件</td>
+    <td width="20%" align="center" bgcolor="#FFD2D2" class="word-orange">點數</td>
+  </tr>
+  <tr>
+    <td align="center">汽機車強制險</td>
+    <td align="center">每一張保單<span class="word-gray"> (註4)</span></td>
+    <td align="center">50點</td>
+  </tr>
+  <tr>
+    <td align="center" bgcolor="#F0F0F0">個人傷害險</td>
+    <td align="center" bgcolor="#F0F0F0">每一張保單<span class="word-gray"> (註4)</span></td>
+    <td align="center" bgcolor="#F0F0F0">100點</td>
+  </tr>
+  <tr>
+    <td align="center">個人健康險</td>
+    <td align="center">每一張保單<span class="word-gray"> (註4)</span></td>
+    <td align="center">100點</td>
+  </tr>
+</table>
+<p class="word-gray">註4：保費需已銷帳及兌現。</p>
+</div>
+</li>
+<li>
+<div class="qa_title">「華得來」點數何時生效？</div>
+<div class="qa_content">
+<p>交易之後，何時可以獲得「華得來」點數？何時可以開始使用？</p>
+<p>&nbsp;</p>
+<p>以每月月底為結算日，當月交易產生之點數將於次月10日後匯入會員帳戶；惟購買人身保險產生之點數於次月17日後匯入(註5)，證券相關交易產生之點數於T+2個月之10日後匯入<span class="word-gray">(註6)</span>。點數匯入後即可開始使用。</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p class="word-gray">註5：例如7/31投保人身保險，8/17後可取得點數。</p>
+<p class="word-gray">註6：例如7/31證券下單，9/10後可取得點數。</p>
+</div>
+</li>
+<li>
+<div class="qa_title">「華得來」點數有效期限？</div>
+<div class="qa_content">
+<p>•	「華得來」點數之有效使用期間，自點數生效日起算至第2年年底前有效。(與華南銀行信用卡紅利點數之有效期間相同)。</p>
+</div>
+</li>
+</ul>
+</div>
+<!--01 end-->
+<!--02-->
+<div id="qaContent">
+<a name="02" id="02"></a>
+<div id="qa-q">註冊</div>
+<ul class="accordionPart">
+<li>
+<div class="qa_title">如何參加「華得來」集點活動？</div>
+<div class="qa_content">
+<p>客戶購買華南銀行產品可不用簽署同意書即可參與集點活動(但點數計算僅限華銀產品);客戶若需整合購買來自華南永昌證券及華南產險產品所獲得之點數時，則需先簽署書面同意書始得參加集點活動。</p>
+</div>
+</li>
+<li>
+<div class="qa_title">註冊之路徑及方式為何？</div>
+<div class="qa_content">
+<p>客戶可透過華南銀行，華南永昌證券及華南產險官網連結至「華得來」點數兌換網站進行註冊，註冊程序如下：</p>
+<p>1.輸入ID及認證密碼，供各子公司進行身份驗證。另華南銀行信用卡客戶也可以信用卡卡號及有效期間進行認證。</p>
+<p>2.同意網站會員相關條款。</p>
+<p>3.由客戶自行鍵入電話及email等資料並設定登入密碼。</p>
+</div>
+</li>
+<li>
+<div class="qa_title">如何知道註冊之認證密碼？</div>
+<div class="qa_content">
+<p>認證密碼由客戶首次交易產生點數之子公司，於首次點數生效時，以手機簡訊及email通知客戶。</p>
+</div>
+</li>
+<li>
+<div class="qa_title">華南永昌證券客戶如何取得認證碼?</div>
+<div class="qa_content">
+<p>凡華南永昌證券客戶，請點選【<a href="https://etrade.entrust.com.tw/hnsc/custsvc/func/hnp/HuaNanPointLogin.jsp" target="_blank" class="blue-link" >華南永昌證券簽署專區</a>】 華南永昌證券客戶交易且申辦電子對帳單及簽署平台同意書(請透過有效憑證進行線上同意書簽署)，始取得認證碼至「華得來」點數兌換網站進行註冊。</p>
+</div>
+</li>
+</ul>
+</div>
+<!--02 end-->
+<!--03-->
+<div id="qaContent">
+<a name="03" id="03"></a>
+<div id="qa-q">兌換</div>
+<ul class="accordionPart">
+<li>
+<div class="qa_title">兌換後商品如何辦理換貨？</div>
+<div class="qa_content">
+<p>1. 客戶透過各子公司客服辦理點數兌換商品換貨事宜。</p>
+<p>2. 各子公司客服通知商品廠商辦理換貨作業，由商品廠商聯絡客戶處理換貨事宜。</p>
+</div>
+</li>
+<li>
+<div class="qa_title">如華得來點數不足是否仍可兌換？</div>
+<div class="qa_content">
+<p>兌換商品時系統將優先扣除華得來點數，不足部分始扣抵信用卡紅利點數；另得以點數加自付額方式兌換(限使用華南銀行信用卡)。</p>
+</div>
+</li>
+<li>
+<div class="qa_title">兌換成功後，多久可以收到兌換之商品？</div>
+<div class="qa_content">
+<p>您將於兌換成功當日收到主旨為【華得來點數兌換訂單〔訂單編號〕】之確認訂單成功Email，如您兌換商品為實體物品，該Email會註記「您將於2-4星期內收到商品」；如您兌換商品為電子票券專區內之電子票券，該Email會註記「您將收到另一封Email及簡訊告知電子兌換序號，並可憑此序號至門市兌換實體商品。</p>
+</div>
+</li>
+</ul>
+</div>
+<!--03 end-->
+<!--04-->
+<div id="qaContent">
+<a name="04" id="04"></a>
+<div id="qa-q">客服</div>
+<ul class="accordionPart">
+<li>
+<div class="qa_title">如何查詢點數餘額？</div>
+<div class="qa_content">
+<p>1. 客戶可登入「華得來」兌換平台，自行查詢最新點數餘額。</p>
+<p>2. 客戶可透過華南銀行、華南永昌證券及華南產險之客服進行查詢。</p>
+</div>
+</li>
+<li>
+<div class="qa_title">如何查詢點數交易明細？</div>
+<div class="qa_content">
+<p>客戶得透過華南銀行、華南永昌證券及華南產險之客服進行查詢。</p>
+</div>
+</li>
+<li>
+<div class="qa_title">忘記密碼時，如何重新申請密碼？</div>
+<div class="qa_content">
+<p>客戶可透過華南銀行、華南永昌證券及華南產險之客服專線申請密碼重置或重送，經由客服確認客戶身份後，藉由手機簡訊或Email將密碼再行通知客戶。</p>
+</div>
+</li>
+</ul>
+</div>
+<!--04 end-->
+<!-- InstanceEndEditable -->
+</div>
+<!--content end-->
+</div>
+<!--main end-->
+</div>
+<!--footer-->
+<div id="footer">
+<p>建議瀏覽器版本為IE9以後版本，並將語系設為中文Big5，以獲得最佳瀏覽效果。</p>
+<p>顧客服務專線：華南銀行：(02)2181-0101、華南永昌證券：412-8889、華南產險：(02)2761-6969 / 0800-010850、華南期貨02-27180000</p>
+<p>本網站由瑪奇朵股份有限公司建置維護</p>
+</div>
+<!--footer end-->
+</div>
+<!--QRcode-->
+<div id="QRcode"></div>
+<!--QRcode end-->
+<!--Sny-r-spic-->
+<div id="sny-r-spic"><a href="content/product/product-sny.html"><img src="../images/sny-right-spic.png" /></a></div>
+<!--Sny-r-spic end-->
+<!--gotop-->
+<div id="gotop">
+<ul class="links">
+<li><a href="#">TOP</a></li>
+</ul>
+</div>
+<!--gotop end-->
+</body>
+<!-- InstanceEnd --></html>

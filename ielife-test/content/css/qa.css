@@ -1,0 +1,126 @@
+#qa-item{
+	width:100%;
+	float:left;
+	border-bottom:1px #999 dotted;
+}
+#qa-item ul {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+#qa-item li {
+	width:auto;
+	list-style-type:none;
+	display:block;
+	float:left;
+	padding:8px 8px 12px 8px;
+	margin:10px 6px 10px 6px;
+	border:1px #999 dotted;
+}
+#qa-q{
+	float:left;
+	width:100%;
+	border-bottom:3px #F00 solid;
+	margin-top:8px;
+	padding-bottom:8px;
+	color:#F00;
+	font-size:16px;
+	font-weight:bolder;
+}
+/*======================================= QA列表 =======================================*/
+
+#qa01 {
+	clear:both;
+	float:left;
+	width:100%;
+}
+#qaContent {
+	width: 100%;
+	float:left;
+	margin-top:20px;
+}
+#qaContent table {
+	width:98%;
+	font-family:Arial, Helvetica, sans-serif;
+	padding:0;
+	margin:0;
+	text-align:left;
+}
+#qaContent th {
+	padding:5px 5px 5px 5px;;
+	border-bottom:1px #CCC solid;
+}
+#qaContent td {
+	padding:5px 5px 5px 5px;;
+	border-bottom:1px #CCC solid;
+}
+#qaContent ul {
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+#qaContent ul.accordionPart {
+	width:100%;
+	float:left;
+}
+#qaContent ul.accordionPart li {
+	margin:0;
+}
+#qaContent ul.accordionPart li .qa_title {
+	position:relative;
+	cursor: pointer;
+	background:url(../images/icon07.png);
+	background-position:top left;
+	background-repeat:no-repeat;
+	padding-left:20px;
+	padding-top:8px;
+	padding-bottom:8px;
+	margin-top:10px;
+	margin-bottom:5px;
+	border-bottom:1px #CCC dotted;
+	font-size:120%;
+	font-weight:bold;
+	color:#971111;
+	float:left;
+	width:96%;	
+}
+#qaContent ul.accordionPart li .qa_title:hover {
+	color:#F60;
+}
+#qaContent ul.accordionPart li .qa_title p {
+	position:absolute;
+	top:6px;
+	right:20px;
+	font-size:87%;
+	color:#999;
+}
+#qaContent ul.accordionPart li .qa_title_on {
+}
+#qaContent ul.accordionPart li .qa_content {
+	padding-left:20px;
+	margin:10px 10px 10px 30px;
+	float:left;
+	width:93%;
+}
+#qaContent ul.accordionPart li .qa_content ol {
+	width:95%;
+	padding:0 0 0 20px;
+}
+#qaContent ul.accordionPart li .qa_content ul {
+	margin:0;
+	list-style:disc;
+}
+#qaContent ul.accordionPart li .qa_content li {
+	padding:0;
+	margin:0;
+}
+
+
+/*手機板*/
+@media only screen and (max-width:570px) {
+#qaContent ul.accordionPart li .qa_content {
+	padding-left:0px;
+	margin:10px 10px 10px 30px;
+	float:left;
+	width:90%;
+}

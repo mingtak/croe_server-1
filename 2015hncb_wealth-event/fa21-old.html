@@ -1,0 +1,586 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="viewport" content="width=device-width , minimum-scale=1, maximum-scale=1">
+<title>華南銀行羊羊得益利客行動羊得益利客行動</title>
+
+
+<link href="css/style1.css" rel="stylesheet" type="text/css" />
+<link href="css/main_style.css" rel="stylesheet" type="text/css" />
+<link href="css/pure-min.css" rel="stylesheet" type="text/css" />
+<link href="css/grids-responsive-min.css" rel="stylesheet" type="text/css" />
+
+
+
+<script type="Text/Javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="Text/Javascript" src="js/pageart.js"></script>
+
+
+</head>
+  <script type='text/javascript'>
+var list=[];
+var StartOffset=0;
+var RecordNumPerPage=10;
+var RecordNum=0;
+var ShowRecord=0;
+        $(document).ready(function(){
+
+                /* call the php that has the php array which is json_encoded */
+                $.getJSON('qryBenefit.php', function(data) {
+                
+                
+                        /* data will hold the php array as a javascript object */
+                        $.each(data, function(key, val) {
+                            list.push(val);
+                               // $('ul').append('<li id="' + key + '">' key+ ';;'+ val.fundType + ' ' + val.fundName + ' ' + val.fundLink  + '</li>');
+                        });
+                        creatFundTypeOption();
+                        creatCurrencyOption();
+                        creatRiskOption();
+                        ShowData();
+                        
+                });
+
+        });
+
+function CreatePageLine(pageline) {
+  
+  var PageNum=(RecordNum -1) / RecordNumPerPage;
+  PageNum = Math.floor(PageNum)+1;
+  for (var i = 0 ; i < PageNum ; i++) {
+  
+    if (StartOffset ==i*RecordNumPerPage )
+    {
+        var st =  " [" +( i+1 ) + "] ";
+        var linkText=document.createTextNode(st);
+        //linkText.style.color = "#FF0000";
+        pageline.appendChild(linkText);
+    }
+    else
+    {
+        var a = document.createElement('a');
+        var linkText=document.createTextNode(i+1);
+    
+        a.appendChild(linkText);
+        a.title = i+1;
+        a.href='javascript:StartOffset=' + i*RecordNumPerPage +';ShowData();';
+//    a.onclick =function(){
+//      'StartOffset=' + i*RecordNumPerPage +';ShowData();';
+//    }; 
+    
+        pageline.appendChild(a);
+    }
+  }
+}        
+
+function ShowData() {
+    
+    var dataarray=document.getElementById("data_array") ;
+    var length = dataarray.childNodes.length;
+    
+                    
+    for (var i = 0 ; i < length ; i++) {
+        dataarray.removeChild(dataarray.childNodes[0]);
+    }
+    RecordNum=0;
+    ShowRecord=0;
+     for(var i = 0 ; i < list.length ; i++){
+        creatRow(list[i]);
+    }
+    var pageline=document.getElementById("pageline") ;
+    var length = pageline.childNodes.length;
+    for (var i = 0 ; i < length ; i++) {
+        pageline.removeChild(pageline.childNodes[0]);
+    }
+    CreatePageLine(pageline);
+
+}
+
+
+function creatFundTypeOption() {
+    var fundTypeOption=document.getElementById("fundType") ;
+    removeAllOption(fundTypeOption);
+
+    addOption(fundTypeOption, "基金類型", "");
+
+    addOption(fundTypeOption, "選擇全部", "");
+
+    var fundType = null;
+                    
+    for(var i = 0 ; i < list.length ; i++){
+        fundType = list[i].fundType;
+        var exist = false; 
+
+        for(var j = 0 ; j < fundTypeOption.options.length ; j++){
+            var text = fundTypeOption.options[j].text;
+            if(fundType == text){
+                exist = true;
+                break;
+            }
+            
+        }
+        
+        if(!exist){
+            addOption(fundTypeOption, fundType, fundType);
+        }
+
+    }
+}
+
+function creatCurrencyOption() {
+    var fundCurrencyOption=document.getElementById("fundCurrency") ;                
+    
+    removeAllOption(fundCurrencyOption);
+    addOption(fundCurrencyOption, "計價幣別", "");
+    addOption(fundCurrencyOption, "選擇全部", "");
+    
+    var currency = null;
+                    
+    for(var i = 0 ; i < list.length ; i++){
+
+        currency = list[i].fundCurrency;
+        var exist = false; 
+
+        for(var j = 0 ; j < fundCurrencyOption.options.length ; j++){
+            var text = fundCurrencyOption.options[j].text;
+            if(currency == text){
+                exist = true;
+                break;
+            }
+            
+        }
+        
+        if(!exist){
+            addOption(fundCurrencyOption, currency, currency);
+        }
+
+    }
+}
+
+function creatRiskOption() {
+    var fundRiskOption=document.getElementById("fundRisk") ;
+    removeAllOption(fundRiskOption);
+    addOption(fundRiskOption, "風險等級", "");
+    addOption(fundRiskOption, "選擇全部", "");
+    
+    var risk = null;
+                    
+                    
+    for(var i = 0 ; i < list.length ; i++){
+
+        risk = list[i].fundRisk;
+        var exist = false; 
+
+        for(var j = 0 ; j < fundRiskOption.options.length ; j++){
+            var text = fundRiskOption.options[j].text;
+            if(risk == text){
+                exist = true;
+                break;
+            }
+            
+        }
+        
+        if(!exist){
+            addOption(fundRiskOption, risk, risk);
+        }
+
+    }
+}
+function addOption(obj, text, value){
+    obj.options.add(new Option(text, value));
+}
+
+function removeAllOption(obj){
+    obj.options.length = 0;  
+}
+
+function creatRow(fundRecord) {
+    var fundID = fundRecord.fundID;
+    var fundType = fundRecord.fundType;
+    
+    var fundName = fundRecord.fundName;
+    var fundRisk = fundRecord.fundRisk;
+    
+    var fundHnID = fundRecord.fundHnID;
+    var fundIntr = fundRecord.fundIntr;
+    if (fundIntr === null)
+      fundIntr=' ';
+    
+    var fundCurrency = fundRecord.fundCurrency;
+    var fundLink = fundRecord.fundLink;
+  
+    var fundTypeOption=document.getElementById("fundType") ;
+    var fundCuerencyOption=document.getElementById("fundCurrency") ;
+    var fundRiskOption=document.getElementById("fundRisk") ;
+    
+    if(fundTypeOption.value != '' && fundTypeOption.value != fundType){
+        return;
+    }
+    if(fundCuerencyOption.value != '' && fundCuerencyOption.value != fundCurrency){
+        return;
+    }
+    if(fundRiskOption.value != '' && fundRiskOption.value != fundRisk){
+        return;
+    }
+    RecordNum++;
+    if (ShowRecord>=RecordNumPerPage || RecordNum < StartOffset )
+      return;
+    else
+      if (RecordNum >=StartOffset)
+        ShowRecord++;
+    var row = document.createElement("tr");
+    row.className  = "c";
+    var fundTypeCell = document.createElement("td");
+    //fundTypeCell.className = "c";
+    fundTypeCell.appendChild(document.createTextNode(fundType));
+    row.appendChild(fundTypeCell);
+    
+    var fundNameCell = document.createElement("td");
+   // fundNameCell.className = "c";
+   
+    var a = document.createElement('a');
+    var pos=fundName.indexOf('(',4);
+    var  funRealName='';
+    var fundRiskWarn='';
+    if (pos>=0){                 
+      funRealName=fundName.substring(0,pos);
+      fundRiskWarn=fundName.substring(pos);
+      
+    }
+    else{
+      funRealName=fundName;
+      fundRiskWarn='';
+    }  
+    
+    var linkText=document.createTextNode(funRealName);
+    a.appendChild(linkText);
+    a.title = funRealName;
+    a.href = fundLink;
+    a.target = "_blank";
+    //if (fundRiskWarn != '' )
+    //  a.alt = fundRiskWarn;
+    fundNameCell.appendChild(a);
+    row.appendChild(fundNameCell);
+
+     var fundRiskWarnCell = document.createElement("td");
+    //fundRiskCell.className = "c";
+    var fundRiskWarn2="";
+    pos=-1;
+    if (fundRiskWarn !='')
+      pos=fundRiskWarn.indexOf('(',6);
+    if (pos>0)
+    {
+      fundRiskWarn2= fundRiskWarn.substring(pos);
+      fundRiskWarn=fundRiskWarn.substring(0,pos);
+      fundRiskWarnCell.appendChild(document.createTextNode(fundRiskWarn));
+      var fundRiskBrCell = document.createElement("br");
+      fundRiskWarnCell.appendChild(fundRiskBrCell);
+      fundRiskWarnCell.appendChild(document.createTextNode(fundRiskWarn2));   
+    }else
+    {
+      fundRiskWarnCell.appendChild(document.createTextNode(fundRiskWarn));
+    
+    }
+    
+    
+    row.appendChild(fundRiskWarnCell);
+    
+    var fundRiskCell = document.createElement("td");
+    //fundRiskCell.className = "c";
+    fundRiskCell.appendChild(document.createTextNode(fundRisk));
+    row.appendChild(fundRiskCell);
+    
+    var fundHnIDCell = document.createElement("td");
+    //fundRiskCell.className = "c";
+    fundHnIDCell.appendChild(document.createTextNode(fundHnID));
+    row.appendChild(fundHnIDCell);
+    
+    var fundIntrCell = document.createElement("td");
+    //fundRiskCell.className = "c";
+    fundIntrCell.appendChild(document.createTextNode(fundIntr));
+    row.appendChild(fundIntrCell);
+    
+    var fundCurrencyCell = document.createElement("td");
+    //fundRiskCell.className = "c";
+    fundCurrencyCell.appendChild(document.createTextNode(fundCurrency));
+    row.appendChild(fundCurrencyCell);
+    
+    
+    var dataarray=document.getElementById("data_array") ;
+    dataarray.appendChild(row);
+}
+
+        
+        </script>
+
+<body>
+<div id="gotop"><a href="#">返回頁首</a></div>
+<div id="header">
+<div id="logo">
+<div><a href="#"><img src="1q2w3e/logo.svg" /></a></div>
+</div>
+</div>
+<div id="mainpart">
+<div id="banner">
+  <img src="1q2w3e/banner_2.jpg"/>
+  </div>
+<div id="butbar">
+<ul>
+<li id="but1">
+<a href="fa4.html">近期活動總覽</a>
+</li>
+<li id="but2">
+<a href="fa3.html">羊羊得意</a>
+</li>
+<li id="but3">
+<a href="fa1.html">越扣越得意</a>
+</li>
+<li id="but4">
+<a href="#"  class="stay">利客得益</a>
+</li>
+</ul>
+</div>
+
+
+<div id="pagearea">
+<div id="note">
+<div class="title">立刻小叮嚀</div>
+經常與您的理財顧問<a href="http://wealth.hncb.com.tw/period" target="_blank">聯繫</a>，有助
+於掌握市場動態，將大大提昇投
+資獲利的機會！</div>
+
+
+<div class="sq">
+<h3><span>活動時間</span></h3>
+<p class="yy">2015年2月8日至2015年3月8日(期間內之銀行營業日)</p>
+<h3><span>活動辦法</span></h3>
+<p class="yy">活動期間內，於本行網路銀行(含行動網銀)以單筆方式新申購活動商品，即享申購手續費3.98折優惠。</p>
+<h3><span>活動商品</span></h3>
+<p>請點選表內各基金名稱查詢基金資訊：</p>
+</div>
+<div class="tabley">
+  <table width="100%" border="0" cellspacing="1" cellpadding="0">
+  <thead>
+    <tr>
+      <th><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+        <td>
+          <select name="fundType" class="t02" id="fundType" onchange="javascript:StartOffset=0;ShowData();">
+                      <option value="">基金類型</option><option value="">選擇全部</option>
+                      </select>
+          </td>
+          
+        </tr>
+      </table></th>
+      <th>基金名稱</th>
+      <th>基金警語</th>
+      <th>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+  <td>
+          <select name="fundRisk" class="t02" id="fundRisk" onchange="javascript:StartOffset=0;ShowData();">
+          <option value="">風險<br/>等級</option><option value="">選擇<br/>全部</option>
+          </select>
+          </td>
+  </tr>
+</table>
+
+        </th>
+      <th nowrap="nowrap">基金<br />
+        代號</th>
+      <th nowrap="nowrap">配息<br />
+        頻率</th>
+      <th><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+        <td nowrap="nowrap">
+          <select name="fundCurrency" class="t02" id="fundCurrency" onchange="javascript:StartOffset=0;ShowData();">
+          <option value="">計價<br/>幣別</option><option value="">選擇<br/>全部</option>
+          </select>
+         </td>
+         
+          
+        </tr>
+      </table></th>
+    </tr>
+    <tr>
+</thead> 
+    <tbody id="data_array">
+    <tr>
+
+          <td>混合資產-平衡型</td>
+      <td><a href="#" target="_blank">摩根多重收益基金</a></td>
+      <td align="left">(本基金有相當比重投資於非投資等級之高風險債券)<br />
+(本基金之配息來源可能為本金)</td>
+      <td>RR3</td>
+      <td>0190</td>
+      <td>季配<br />
+        現金</td>
+      <td>歐元</td>
+    </tr>
+
+   </tbody>    
+  </table>
+</div>
+<div id="pageline">
+</div>
+<div class="sq">
+  <h3><span>注意事項</span></h3>
+<ol>
+<li>建議貴客戶依據本身投資風險偏好與基金風險等級，基於獨立之判斷，自行決定挑選適合投資之基金。<br />
+  </li>
+<li>本活動僅限活動期間內新申購且扣款成功之信託帳號方可享手續費折扣，如為「既有信託帳號」變更或轉換投資標的，則不適用此優惠。<br />
+  </li>
+<li>假日及營業時間(09:30-15:00)外之交易，若遇次一營業日為非活動期間者，則不適用本活動優惠。基金申購相關規範請參照「<a href="http://campaign.hncb.com.tw/intranet/trust/20151230/LISA.pdf">華南銀行辦理特定金錢信託商品業務及作業簡介</a>」。<br />
+  </li>
+<li>本活動優惠不得與其他優惠同時使用，若同時適用多個優惠專案，系統將自動選擇最優方案使用。<br />
+  </li>
+<li>本活動如遇不可抗力或不可歸責於本行之事由，本行保留本活動之修改、變更、取消或暫停之權利，更動之活動時間與內容方式，將於本行網站(<a href="http://www.hncb.com.tw/" target="_blank">www.hncb.com.tw)</a>公布。</li>
+<li>其它未規定事項，悉依相關法令規章及本行業務規定辦理。<br />
+  </li>
+<li>華南商業銀行總行地址：臺北市信義區松仁路123號；客戶服務專線：(02) 2181-0101。</li>
+</ol>
+
+
+<a class="openbut">基金投資須知及風險預告事項</a>
+
+
+<div id="inpo" style="display:none;">
+<p>基金投資須知及風險預告事項：</p>
+<ol>
+<li>基金（包括具有定期配息之基金）投資非屬存款保險條例、保險安定基金或其他相關保障機制之保障範圍，且基金投資具投資風險，此一風險可能使信託本金發生全部虧損。</li>
+<li> 基金並非存款，委託人須自負盈虧，本行受託投資不保本不保息，除盡善良管理人注意義務外，投資所可能產生的本金虧損、匯率損失、或基金解散、清算、移轉、合併等風險，均由委託人承擔。  </li>
+<li>本行受託投資之基金經金管會核准或同意生效，惟不表示絕無風險。基金經理公司以往之經理績效不保證基金之最低投資收益；基金經理公司除盡善良管理人之注意義務外，不負責基金之盈虧，亦不保證最低之收益，委託人申購前應詳閱基金公開說明書。</li>
+<li> 投資前應詳閱風險預告及各該基金公開說明書，確實作好財務規劃與風險評估。本行銷售之基金已備有公開說明書(或其中譯本)或投資人須知，委託人可至公開資訊觀測站(<a href="http://newmops.tse.com.tw" target="_blank">http://newmops.tse.com.tw</a>)、境外基金資訊觀測站(<a href="http://www.fundclear.com.tw" target="_blank">http://www.fundclear.com.tw</a>) 或本行基金資訊網(<a href="http://fund.hncb.com.tw/w/index.htm" target="_blank">http://fund.hncb.com.tw/w/index.htm)下載。</a></li>
+<li>為保護既有投資人之權益，部份境外基金設有價格稀釋調整機制，投資人申購前應詳閱基金公開說明書及投資人須知。</li>
+<li>委託人瞭解並同意受託人辦理特定金錢信託業務或特定有價證券信託業務之相關交易時，自交易相對人取得之報酬、費用、折讓等各項利益，得作為受託人收取之信託報酬。</li>
+<li>委託人欲瞭解基金經理費率及其他通路報酬之最新變動情形，可至本行網站(<a href="http://www.hncb.com.tw" target="_blank">http://www.hncb.com.tw</a>)查詢，查詢路徑為「<a href="http://www.hncb.com.tw/wealth/index.shtml" target="_blank">貴賓理財</a>」→「<a href="http://www.hncb.
+com.tw/wealth/index.shtml" target="_blank">理財資訊</a>」→「<a href="http://www.hncb.com.tw/table/d0203.shtml" target="_blank">共同基金查詢</a>」→「<a href="https://ibank.hncb.com.tw/netbank/servlet/TrxDispatcher?trx=com.lb.wibc.trx.MFundInfoShowUp&state=prompt" target="_blank">基金通路報酬揭露</a>」，查詢基金經理費率及其分成費率或其他通路報酬之最新變動情形。</li>
+<li>委託人之交易如經基金公司認定為短線交易者，基金公司或本行可拒絕受理申請轉換或申購要求，並可請求支付一定比例之贖回費用或其他相關費用，費用標準均依各該基金公司之規定。</li>
+<li>委託人因不同時間進場，將有不同之投資績效，過去之績效亦不代表未來績效之保證。基金淨值可能因市場因素而上下波動；又投資新興市場可能比投資已開發國家有較大的價格波動及流動性較低的風險，委託人應慎選投資標的。  </li>
+<li>基金配息率不代表基金報酬率，且過去配息率不代表未來配息率。基金的配息可能由基金的收益或本金中支付，任何涉及由本金支出的部份，可能導致原始投資金額減損。  </li>
+<li>部分基金可能持有衍生性商品部位，可能達基金淨資產價值之100%，可能造成基金淨值高度波動及衍生其他風險。</li>
+<li class="red">高收益債券基金（本類基金主要係投資於非投資等級之高風險債券且配息來源可能為本金）（主要特色係投資前揭基金之組合基金亦同），適合能承受較高風險之『非保守型』委託人，另委託人投資以高收益債券為訴求之基金不宜占投資組合過高的比重。由於高收益債券之信用評等未達投資等級或未經信用評等，且對利率變動的敏感度甚高，可能會因利率上升、市場流動性下降，或債券發行機構違約不支付本金、利息或破產而蒙受虧損，不適合無法承擔相關風險之委託人；又如係本國投信機構募集者，則可能投資於符合美國Rule 144A規定具有私募性質之債券，雖其投資總金額不得超過基金淨資產價值之百分之十，然該債券具有債券發行人違約之信用風險、利率風險、流動性風險、交易對手風險及因財務訊息揭露不完整或因價格不透明導致波動性較大之風險。  </li>
+<li>投資於中國之基金應依中華民國相關法令之規定：境外基金投資大陸地區證券市場之有價證券以掛牌上市有價證券為限，且投資前述有價證券總金額不得超過該境外基金淨資產價值之百分之十，故並非完全投資於大陸地區有價證券；投信基金投資大陸地區之有價證券雖可包括其證券集中交易之股票、存託憑證或符合一定信用評等之儥券等且法令並無規範投資總金額之上限，惟仍應符合信託契約、公開說明書、證券投資信託基金管理辦法等相關規定及受到基金公司QFII額度之限制，故亦非一定完全投資於大陸地區有價證券。又投資人亦須留意中國市場政府政策、法令、會計稅務制度、經濟與市場等變動所可能產生之投資風險。 </li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div id="sitemap" class="full_wrap sitemap_wrap show_sitemap" style="display:none;">
+        <div class="sitemap pure-g clearfix">
+            <div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-5">
+                <ul class="sitemap_list">
+                    <li>
+                        <h4>精選商品</h4>
+                    </li>
+                    <li><a href="/fund/selective">精選基金</a></li>
+                    <li><a href="/insurance/ipo">IPO新募集基金</a></li>
+                    <li><a href="/insurance/selective">精選保險</a></li>
+                </ul>
+            </div>
+            <div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-5">
+                <ul class="sitemap_list">
+                    <li>
+                        <h4>理財學堂</h4>
+                    </li>
+                    <li><a href="#">新手介紹</a></li>
+                    <li class="sitemap_li_2"><a href="/school/novice/fund/intro">基金篇</a></li>
+                    <li class="sitemap_li_2"><a href="/school/novice/insurance">保險篇</a></li>
+                    <li class="sitemap_li_2 sitemap_li_2_last"><a href="/school/novice/trust">信託篇</a></li>
+                    <li><a href="#">定期(不)定額</a></li>
+                    <li class="sitemap_li_2"><a href="/school/dca">定期定額投資術</a></li>
+                    <li class="sitemap_li_2 sitemap_li_2_last"><a href="/school/va">定期不定額投資術</a></li>
+                    <li><a href="#">基金資訊</a></li>
+                    <li class="sitemap_li_2"><a href="http://fund.hncb.com.tw/w/index.htm" target="_blank">國內/國外</a></li>
+                    <li class="sitemap_li_2 sitemap_li_2_last"><a href="http://www.hncb.com.tw/wealth/d0203.shtml target=" _blank="">共同基金查詢</a></li>
+                    <li><a href="#">理財新知</a></li>
+                               <li class="sitemap_li_2"><a href="/awakening/f116e454-3723-488f-80b7-761b91a79813">基金篇</a></li>
+            <li class="sitemap_li_2"><a href="/awakening/6487f217-5427-4f65-bfcb-6acf49eb2a26">保險篇</a></li>
+            <li class="sitemap_li_2"><a href="/awakening/338130d8-6832-4f8b-9ca0-599fe25c3a95">其他</a></li>
+
+                    <li><a href="#">Q&amp;A</a></li>
+                        <li class="sitemap_li_2"><a href="/faq/6b03aca8-b856-4228-8594-ecb555b6f911">基金篇</a></li>
+    <li class="sitemap_li_2"><a href="/faq/3fafed88-30a0-4dc8-8154-179fa5c4e7ef">保險篇</a></li>
+    <li class="sitemap_li_2"><a href="/faq/8379bada-fbc7-4ba3-b857-352686f76e13">其他</a></li>
+
+                </ul>
+            </div>
+            
+            <div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-5">
+                <ul class="sitemap_list">
+                    <li>
+                        <h4>保險專區</h4>
+                    </li>
+                    <li><a href="#">保險種類</a></li>
+                            <li class="sitemap_li_2"><a href="/insurance/760d38ff-cb20-4b02-a72a-b3674ec625d5">年金保險</a></li>
+         <li class="sitemap_li_2"><a href="/insurance/a87b6e1b-8309-4c8a-b2f5-98fece70b144">人壽保險</a></li>
+         <li class="sitemap_li_2"><a href="/insurance/ffc8f7e0-9e1b-4e0b-a41f-8f26406753a3">傷害意外險</a></li>
+         <li class="sitemap_li_2"><a href="/insurance/3a140de2-ba7d-418d-a158-5e66775a869c">健康醫療險</a></li>
+         <li class="sitemap_li_2"><a href="/insurance/6d2d4b89-abf3-4734-9278-0166d43e7e46">投資型(壽險/年金保險)</a></li>
+        <li class="sitemap_li_2 sitemap_li_2_last"><a href="/insurance/08d09d0a-6331-4b2b-8600-f203876ba2bf">保障型保險</a></li>
+                    
+                </ul>
+            </div>
+            <div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-5">
+                <ul class="sitemap_list sitemap_list_last">
+                    <li>
+                        <h4>信託專區</h4>
+                    </li>
+                    <li><a href="/trust/account">集合管理運用帳戶</a></li>
+                    <li><a href="/trust/internal">特定金錢信託投資國內有價證券</a></li>
+                    <li><a href="/trust/foreign">特定金錢信託投資國外有價證券</a></li>
+                    <li><a href="#">財產信託</a></li>
+                            <li class="sitemap_li_2"><a href="/trust/312670ab-e78f-4a10-a9ed-de365fb86c4e">子女教養信託</a></li>
+        <li class="sitemap_li_2"><a href="/trust/9e3c4b56-bd99-4d69-95d0-599f05a7a996">退休安養信託 </a></li>
+        <li class="sitemap_li_2"><a href="/trust/6a894687-0552-4063-9b12-2e902f2f97bd">保險金信託 </a></li>
+        <li class="sitemap_li_2"><a href="/trust/48ab012a-d83b-4801-8186-136def56be38">不動產交易安全信託</a></li>
+        <li class="sitemap_li_2"><a href="/trust/d3662a06-96f4-4d2a-b691-2f4352a71e60">不動產合建信託</a></li>
+        <li class="sitemap_li_2"><a href="/trust/f56581bd-34b5-4b61-a9c2-e1e3910df410">企業員工儲蓄(持股)信託</a></li>
+        <li class="sitemap_li_2"><a href="/trust/5ef31646-b21d-46ab-8691-978bd3ad5fcd">公益信託</a></li>
+        <li class="sitemap_li_2 sitemap_li_2_last"><a href="/trust/d3e339ad-1075-48b9-959e-5b50375faf3a">信託公告</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+<div id="footer">
+<div class="cen">
+
+<a href="#" class="webmap">網站地圖</a>
+<div class="toolline">
+<ul>
+<li><a href="http://wealth.hncb.com.tw/disclaimer">免責聲明</a></li>
+<li><a href="http://wealth.hncb.com.tw/privacy">網站隱私權保護聲明</a></li>
+<li><a href="http://wealth.hncb.com.tw/security">客戶資料保密措施</a></li>
+<li><a href="http://www.hnfhc.com.tw/05others/privacy2.shtml" target="_blank">共同行銷商品及服務契約 </a></li>
+<li><a href="http://www.hncb.com.tw/document/infoSecurity.pdf" target="_blank">資訊安全政策</a></li>
+<li><a href="http://www.hncb.com.tw/others/privacy4.shtml" target="_blank">引用本行資訊說明</a></li>
+</ul>
+</div>
+<div class="copyright">
+客戶服務專線：(02)2881-2121<a href="http://www.hncb.com.tw/" target="_blank">華南銀行全球資訊網</a>台北市信義區松仁路123號　&copy;2015華南銀行<br />
+建議最家瀏覽版本：IE8以上解析度1024X768 │行動裝置：iOS7以上/Android4.2以上版本</div>
+</div>
+</div>
+</body>
+</html>

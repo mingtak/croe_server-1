@@ -1,0 +1,97 @@
+@charset "utf-8";
+body{
+	margin:0;
+	padding:0;
+	font-family:'微軟正黑體';
+	width:100%;
+	height:100%;
+	font-size:2.2em;
+	font-weight:700;
+	background:#46040d url(../images/app_bg.jpg) no-repeat;
+	background-size:100%;
+}
+body img{
+	border:0px;
+	margin:0px;
+}
+body tr,body td{
+	margin:0px;
+	padding:0px;
+}
+#menubar img{
+	width:100%;
+}
+a {
+	text-decoration:none;
+}
+#layout {
+	height: auto;
+	width: 100%;
+	margin:0 auto;
+}
+#content{
+	float:left;
+	width:100%;
+	height:auto;
+	
+}
+#content ul{
+	width:84%;
+	list-style:none;
+	float:left;
+	padding:0 8%;
+}
+#content ul li{
+	width:16%;
+	float:left;
+	margin:0 2px;
+}
+
+#content #main{
+	float:left;
+	margin:-20px 7% 30px;
+}
+#footer{
+	width:100%;
+	height:auto;
+	bottom:0;
+	left:0;
+	float:left;
+}
+#footer img{
+	width:100%;
+}
+.b2 img{
+	width:70%;
+	margin:0;
+}
+.b3 img{
+	width:25%;
+}
+.m_r{
+	margin-right:5%;}
+.let{
+	letter-spacing:0.12em;}
+.red{
+	color:#F00;
+}
+.s {
+	font-size:0.8em;}
+.inp {
+	background-color:#cccccc;
+	border:0;
+	height:40px;
+	margin-bottom:1.5%;
+	margin-left:10px;
+	width:90%;
+}
+.inp2 {
+	background-color:#cccccc;
+	border:0;
+	height:40px;
+	margin-bottom:1.5%;
+	margin-left:10px;
+	width:500px;
+}
+.b img{
+	width:100%;}

@@ -1,0 +1,72 @@
+/****************************************************************************/
+body,td,th,form,textarea,p,ol {
+	font-family : "Verdana", "Arial", "Helvetica", "sans-serif";
+	font-size : 10pt;
+	font-style : normal;
+	text-decoration : none;
+}
+/****************************************************************************/
+/*
+input {
+	color : black;
+	background-color : white;
+	font-family : "Verdana", "Arial", "Helvetica", "sans-serif";
+	font-size: 9 pt;
+	border: 1 solid #888888;
+}
+select {
+	color : black;
+	background-color : white;
+	font-family : "Verdana", "Arial", "Helvetica", "sans-serif";
+	font-size : 9pt;
+	border: 1 solid #888888;
+}
+*/
+/****************************************************************************/
+
+a:link {
+	color: #005984;
+	font-style:normal;
+	text-decoration: none;
+}
+a:visited {
+	color: #888888;
+	font-style: normal;
+	text-decoration: none;
+}
+a:active {
+	color: #FF0000;
+	font-style: normal;
+	text-decoration: none;
+}
+a:hover {
+	color: green;
+	font-style: normal;
+	text-decoration: none;
+}
+/****************************************************************************/
+a.copyright:link {
+	color: #888888;
+	font-style:normal;
+	text-decoration: none;
+	background-color: #FFFFCC;
+}
+a.copyright:visited {
+	color: #888888;
+	font-style: normal;
+	text-decoration: none;
+	background-color: #FFFFCC;
+}
+a.copyright:active {
+	color: #888888;
+	font-style: normal;
+	text-decoration: none;
+	background-color: #FFFF88;
+}
+a.copyright:hover {
+	color: #FFFFCC;
+	font-style: normal;
+	text-decoration: none;
+	background-color: #888888;
+}
+/****************************************************************************/

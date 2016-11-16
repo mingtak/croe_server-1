@@ -1,0 +1,41 @@
+#log-number {
+	position:absolute;
+	width:182px;
+	height:46px;
+	z-index:1;
+	left: 890px;
+	top: 48px;
+}
+#in-number-01{
+	width:80%;
+	margin-left:10%;
+	margin-top:30px;
+	float:left;
+	font-size:17px;
+}
+#in-number-01 table {
+	width:100%;
+	font-family:Arial, Helvetica, sans-serif;
+	padding:0;
+	margin:0;
+	text-align:left;
+	border:2px #CCC dotted;
+	background:#E8E8E8;
+}
+#in-number-01 td {
+	padding:12px 12px 12px 12px;
+}
+#in-number-btn{
+	width:80%;
+	margin-left:10%;
+	margin-top:30px;
+	float:left;
+	text-align:center;
+}
+#in-prize{
+	width:90%;
+	margin-left:5%;
+	margin-top:30px;
+	float:left;
+	font-size:17px;
+}

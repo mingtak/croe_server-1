@@ -1,0 +1,511 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="viewport" content="width=device-width , minimum-scale=1, maximum-scale=1">
+<title>華南銀行精選基金</title>
+
+
+<link href="css/style1.css" rel="stylesheet" type="text/css" />
+<link href="css/main_style.css" rel="stylesheet" type="text/css" />
+<link href="css/pure-min.css" rel="stylesheet" type="text/css" />
+<link href="css/grids-responsive-min.css" rel="stylesheet" type="text/css" />
+
+
+
+<script type="Text/Javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="Text/Javascript" src="js/pageart.js"></script>
+
+
+</head>
+  <script type='text/javascript'>
+var list=[];
+var StartOffset=0;
+var RecordNumPerPage=10;
+var RecordNum=0;
+var ShowRecord=0;
+        $(document).ready(function(){
+
+                /* call the php that has the php array which is json_encoded */
+                $.getJSON('qryBenefit.php', function(data) {
+                
+                
+                        /* data will hold the php array as a javascript object */
+                        $.each(data, function(key, val) {
+                            list.push(val);
+                               // $('ul').append('<li id="' + key + '">' key+ ';;'+ val.fundType + ' ' + val.fundName + ' ' + val.fundLink  + '</li>');
+                        });
+                        creatFundTypeOption();
+                        creatCurrencyOption();
+                        creatRiskOption();
+                        ShowData();
+                        
+                });
+
+        });
+
+function CreatePageLine(pageline) {
+ var PageNum=(RecordNum -1) / RecordNumPerPage;
+  PageNum = Math.floor(PageNum)+1;
+  for (var i = 0 ; i < PageNum ; i++) {
+  
+    if (StartOffset ==i*RecordNumPerPage )
+    {
+        var st =  " [" +( i+1 ) + "] ";
+        var linkText=document.createTextNode(st);
+        //linkText.style.color = "#FF0000";
+        pageline.appendChild(linkText);
+    }
+    else
+    {
+        var a = document.createElement('a');
+        var linkText=document.createTextNode(i+1);
+    
+        a.appendChild(linkText);
+        a.title = i+1;
+        a.href='javascript:StartOffset=' + i*RecordNumPerPage +';ShowData();';
+//    a.onclick =function(){
+//      'StartOffset=' + i*RecordNumPerPage +';ShowData();';
+//    }; 
+    
+        pageline.appendChild(a);
+    }
+  }
+}        
+
+function ShowData() {
+    
+    var dataarray=document.getElementById("data_array") ;
+    var length = dataarray.childNodes.length;
+    
+                    
+    for (var i = 0 ; i < length ; i++) {
+        dataarray.removeChild(dataarray.childNodes[0]);
+    }
+    RecordNum=0;
+    ShowRecord=0;
+     for(var i = 0 ; i < list.length ; i++){
+        creatRow(list[i]);
+    }
+    var pageline=document.getElementById("pageline") ;
+    var length = pageline.childNodes.length;
+    for (var i = 0 ; i < length ; i++) {
+        pageline.removeChild(pageline.childNodes[0]);
+    }
+    CreatePageLine(pageline);
+
+}
+
+
+function creatFundTypeOption() {
+    var fundTypeOption=document.getElementById("fundType") ;
+    removeAllOption(fundTypeOption);
+
+    addOption(fundTypeOption, "基金類型", "");
+
+    addOption(fundTypeOption, "選擇全部", "");
+
+    var fundType = null;
+                    
+    for(var i = 0 ; i < list.length ; i++){
+        fundType = list[i].fundType;
+        var exist = false; 
+
+        for(var j = 0 ; j < fundTypeOption.options.length ; j++){
+            var text = fundTypeOption.options[j].text;
+            if(fundType == text){
+                exist = true;
+                break;
+            }
+            
+        }
+        
+        if(!exist){
+            addOption(fundTypeOption, fundType, fundType);
+        }
+
+    }
+}
+
+function creatCurrencyOption() {
+    var fundCurrencyOption=document.getElementById("fundCurrency") ;                
+    
+    removeAllOption(fundCurrencyOption);
+    addOption(fundCurrencyOption, "計價幣別", "");
+    addOption(fundCurrencyOption, "選擇全部", "");
+    
+    var currency = null;
+                    
+    for(var i = 0 ; i < list.length ; i++){
+
+        currency = list[i].fundCurrency;
+        var exist = false; 
+
+        for(var j = 0 ; j < fundCurrencyOption.options.length ; j++){
+            var text = fundCurrencyOption.options[j].text;
+            if(currency == text){
+                exist = true;
+                break;
+            }
+            
+        }
+        
+        if(!exist){
+            addOption(fundCurrencyOption, currency, currency);
+        }
+
+    }
+}
+
+function creatRiskOption() {
+    var fundRiskOption=document.getElementById("fundRisk") ;
+    removeAllOption(fundRiskOption);
+    addOption(fundRiskOption, "風險等級", "");
+    addOption(fundRiskOption, "選擇全部", "");
+    
+    var risk = null;
+                    
+                    
+    for(var i = 0 ; i < list.length ; i++){
+
+        risk = list[i].fundRisk;
+        var exist = false; 
+
+        for(var j = 0 ; j < fundRiskOption.options.length ; j++){
+            var text = fundRiskOption.options[j].text;
+            if(risk == text){
+                exist = true;
+                break;
+            }
+            
+        }
+        
+        if(!exist){
+            addOption(fundRiskOption, risk, risk);
+        }
+
+    }
+}
+function addOption(obj, text, value){
+    obj.options.add(new Option(text, value));
+}
+
+function removeAllOption(obj){
+    obj.options.length = 0;  
+}
+
+function creatRow(fundRecord) {
+    var fundID = fundRecord.fundID;
+    var fundType = fundRecord.fundType;
+    
+    var fundName = fundRecord.fundName;
+    var fundRisk = fundRecord.fundRisk;
+    
+    var fundHnID = fundRecord.fundHnID;
+    var fundIntr = fundRecord.fundIntr;
+    if (fundIntr === null)
+      fundIntr=' ';
+    
+    var fundCurrency = fundRecord.fundCurrency;
+    var fundLink = fundRecord.fundLink;
+  
+    var fundTypeOption=document.getElementById("fundType") ;
+    var fundCuerencyOption=document.getElementById("fundCurrency") ;
+    var fundRiskOption=document.getElementById("fundRisk") ;
+    
+    if(fundTypeOption.value != '' && fundTypeOption.value != fundType){
+        return;
+    }
+    if(fundCuerencyOption.value != '' && fundCuerencyOption.value != fundCurrency){
+        return;
+    }
+    if(fundRiskOption.value != '' && fundRiskOption.value != fundRisk){
+        return;
+    }
+    RecordNum++;
+    if (ShowRecord>=RecordNumPerPage || RecordNum < StartOffset )
+      return;
+    else
+      if (RecordNum >=StartOffset)
+        ShowRecord++;
+    var row = document.createElement("tr");
+    row.className  = "c";
+    var fundTypeCell = document.createElement("td");
+    //fundTypeCell.className = "c";
+    fundTypeCell.appendChild(document.createTextNode(fundType));
+    row.appendChild(fundTypeCell);
+    
+    var fundNameCell = document.createElement("td");
+   // fundNameCell.className = "c";
+   
+    var a = document.createElement('a');
+    var pos=fundName.indexOf('(',4);
+    var  funRealName='';
+    if (pos>=0){                 
+      funRealName=fundName.substring(0,pos);
+      fundRiskWarn=fundName.substring(pos);
+      
+    }
+    else{
+      funRealName=fundName;
+      fundRiskWarn='';
+    }  
+    
+    var linkText=document.createTextNode(funRealName);
+    a.appendChild(linkText);
+    a.title = funRealName;
+    a.href = fundLink;
+    a.target="_blank";
+    fundNameCell.appendChild(a);
+    row.appendChild(fundNameCell);
+
+     var fundRiskWarnCell = document.createElement("td");
+    //fundRiskCell.className = "c";
+    var fundRiskWarn2="";
+    pos=-1;
+    if (fundRiskWarn !='')
+      pos=fundRiskWarn.indexOf('(',6);
+    if (pos>0)
+    {
+      fundRiskWarn2= fundRiskWarn.substring(pos);
+      fundRiskWarn=fundRiskWarn.substring(0,pos);
+      fundRiskWarnCell.appendChild(document.createTextNode(fundRiskWarn));
+      var fundRiskBrCell = document.createElement("br");
+      fundRiskWarnCell.appendChild(fundRiskBrCell);
+      fundRiskWarnCell.appendChild(document.createTextNode(fundRiskWarn2));   
+    }else
+    {
+      fundRiskWarnCell.appendChild(document.createTextNode(fundRiskWarn));
+    
+    }
+    
+    
+    row.appendChild(fundRiskWarnCell);
+    
+    var fundRiskCell = document.createElement("td");
+    //fundRiskCell.className = "c";
+    fundRiskCell.appendChild(document.createTextNode(fundRisk));
+    row.appendChild(fundRiskCell);
+    
+    var fundHnIDCell = document.createElement("td");
+    //fundRiskCell.className = "c";
+    fundHnIDCell.appendChild(document.createTextNode(fundHnID));
+    row.appendChild(fundHnIDCell);
+    
+    var fundIntrCell = document.createElement("td");
+    //fundRiskCell.className = "c";
+    fundIntrCell.appendChild(document.createTextNode(fundIntr));
+    row.appendChild(fundIntrCell);
+    
+    var fundCurrencyCell = document.createElement("td");
+    //fundRiskCell.className = "c";
+    fundCurrencyCell.appendChild(document.createTextNode(fundCurrency));
+    row.appendChild(fundCurrencyCell);
+    
+    
+    var dataarray=document.getElementById("data_array") ;
+    dataarray.appendChild(row);
+}
+
+        
+        </script>
+
+<body>
+<div id="mainpart">
+
+
+
+<div id="pagearea">
+<h3 style="text-align:center ; color:#F00">精選本行保管基金</h3>
+<p style="text-align:center ; color:#F00">申購本表商品可享申購手續費3.3折優惠。<br />
+本表自2016年6月22日起適用</p>
+  <div class="tabley">
+    <table  class="d"width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th>基金類型</th>
+        <th>基金名稱</th>
+        <th>基金警語</th>
+        <th>風險等級</th>
+        <th>配息<br />
+          頻率</th>
+        <th>計價幣別</th>
+        <th>基金<br />
+代號</th>
+        </tr>
+      <tr>
+        <td>混合資產</td>
+        <td><a href="http://fund.hncb.com.tw/w/wr/wr02_ACTI26-002020.djhtm" target="_blank">聯博亞太收益成長平衡基金</a></td>
+        <td>(本基金有相當比重投資於非投資等級之高風險債券)<br /></td>
+        <td>RR5</td>
+        <td>累積</td>
+        <td>台幣</td>
+        <td>002020</td>
+        </tr>
+      <tr>
+        <td>混合資產</td>
+        <td><a href="http://fund.hncb.com.tw/w/wr/wr02_ACTI27-002021.djhtm" target="_blank">聯博亞太收益成長平衡基金</a></td>
+        <td>(本基金有相當比重投資於非投資等級之高風險債券)<br />
+          (本基金之配息來源可能為本金)</td>
+        <td>RR5</td>
+        <td>配息</td>
+        <td>台幣</td>
+        <td>002021</td>
+        </tr>
+      <tr>
+        <td>混合資產</td>
+        <td><a href="http://fund.hncb.com.tw/w/wr/wr02_ACJF131-032046.djhtm" target="_blank">摩根中國雙息平衡基金</a></td>
+        <td>(本基金有相當比重投資於非投資等級之高風險債券)<br /></td>
+        <td>RR4</td>
+        <td>累積</td>
+        <td>台幣</td>
+        <td>032046</td>
+        </tr>
+      <tr>
+        <td>混合資產</td>
+        <td><a href="http://fund.hncb.com.tw/w/wr/wr02_ACJF132-032047.djhtm" target="_blank">摩根中國雙息平衡基金</a></td>
+        <td>(本基金有相當比重投資於非投資等級之高風險債券)<br />
+          (本基金之配息來源可能為本金)</td>
+        <td>RR4</td>
+        <td>月配息</td>
+        <td>台幣</td>
+        <td>032047</td>
+        </tr>
+      <tr>
+        <td>混合資產</td>
+        <td><a href="http://fund.hncb.com.tw/w/wr/wr02_ACJF133-8K07.djhtm" target="_blank">摩根中國雙息平衡基金</a></td>
+        <td>(本基金有相當比重投資於非投資等級之高風險債券)<br /></td>
+        <td>RR4</td>
+        <td>累積</td>
+        <td>人民幣</td>
+        <td>8K07</td>
+        </tr>
+      <tr>
+        <td>混合資產</td>
+        <td><a href="http://fund.hncb.com.tw/w/wr/wr02_ACJF134-8K08.djhtm" target="_blank">摩根中國雙息平衡基金</a></td>
+        <td>(本基金有相當比重投資於非投資等級之高風險債券)<br />
+          (本基金之配息來源可能為本金)</td>
+        <td>RR4</td>
+        <td>月配息</td>
+        <td>人民幣</td>
+        <td>8K08</td>
+        </tr>
+      <tr>
+        <td>成熟市場股票</td>
+        <td><a href="http://fund.hncb.com.tw/w/wr/wr02_ACCA40-001034.djhtm" target="_blank">群益美國新創亮點基金</a></td>
+        <td>&nbsp;</td>
+        <td>RR5</td>
+        <td>&nbsp;</td>
+        <td>台幣</td>
+        <td>001034</td>
+        </tr>
+      <tr>
+        <td>成熟市場股票</td>
+        <td><a href="http://fund.hncb.com.tw/w/wr/wr02_ACCA41-8G01.djhtm" target="_blank">群益美國新創亮點基金</a></td>
+        <td>&nbsp;</td>
+        <td>RR5</td>
+        <td>&nbsp;</td>
+        <td>美元</td>
+        <td>8G01</td>
+        </tr>
+      <tr>
+        <td>亞洲市場股票</td>
+        <td><a href="http://fund.hncb.com.tw/w/wr/wr02_ACML32-007030.djhtm" target="_blank">保德信中國品牌基金</a></td>
+        <td>&nbsp;</td>
+        <td>RR5</td>
+        <td>&nbsp;</td>
+        <td>台幣</td>
+        <td>007030</td>
+        </tr>
+      <tr>
+        <td>亞洲市場股票</td>
+        <td><a href="http://fund.hncb.com.tw/w/wr/wr02.djhtm?a=ACML45-8U01" target="_blank">保德信中國品牌基金</a></td>
+        <td>&nbsp;</td>
+        <td>RR5</td>
+        <td>&nbsp;</td>
+        <td>美元</td>
+        <td>8U01</td>
+        </tr>
+      <tr>
+        <td>亞洲市場股票</td>
+        <td><a href="http://fund.hncb.com.tw/w/wr/wr02.djhtm?a=ACML44-8U02" target="_blank">保德信中國品牌基金</a></td>
+        <td>&nbsp;</td>
+        <td>RR5</td>
+        <td>&nbsp;</td>
+        <td>人民幣</td>
+        <td>8U02</td>
+        </tr>
+      <tr>
+        <td>亞洲市場股票</td>
+        <td><a href="http://fund.hncb.com.tw/w/wr/wr02.djhtm?a=ACCY31-010028" target="_blank">國泰中國新興戰略基金</a></td>
+        <td>&nbsp;</td>
+        <td>RR5</td>
+        <td>&nbsp;</td>
+        <td>台幣</td>
+        <td>010028</td>
+      </tr>
+      <tr>
+        <td>亞洲市場股票</td>
+        <td><a href="http://fund.hncb.com.tw/w/wr/wr02.djhtm?a=ACTR11-8F06" target="_blank">國泰中國新興戰略基金</a></td>
+        <td>&nbsp;</td>
+        <td>RR5</td>
+        <td>&nbsp;</td>
+        <td>美元</td>
+        <td>8F06</td>
+      </tr>
+      <tr>
+        <td>亞洲市場股票</td>
+        <td><a href="http://fund.hncb.com.tw/w/wr/wr02_ACFT13-004012.djhtm" target="_blank">富蘭克林華美傳產基金</a></td>
+        <td>&nbsp;</td>
+        <td>RR5</td>
+        <td>&nbsp;</td>
+        <td>美元</td>
+        <td>004012</td>
+      </tr>
+      <tr>
+        <td>高收益債券</td>
+        <td><a href="http://fund.hncb.com.tw/w/wr/wr02_ACKH60-006060.djhtm" target="_blank">野村美利堅高收益債基金</a></td>
+        <td>(本基金有相當比重投資於非投資等級之高風險債券)</td>
+        <td>RR3</td>
+        <td>累積</td>
+        <td>台幣</td>
+        <td>006060</td>
+      </tr>
+      <tr>
+        <td>高收益債券</td>
+        <td><a href="http://fund.hncb.com.tw/w/wr/wr02_ACKH61-006061.djhtm" target="_blank">野村美利堅高收益債基金</a></td>
+        <td>(本基金有相當比重投資於非投資等級之高風險債券)<br />
+(本基金之配息來源可能為本金)</td>
+        <td>RR3</td>
+        <td>月配息</td>
+        <td>台幣</td>
+        <td>006061</td>
+      </tr>
+      <tr>
+        <td>高收益債券</td>
+        <td><a href="http://fund.hncb.com.tw/w/wr/wr02_ACKH62-8D08.djhtm" target="_blank">野村美利堅高收益債基金</a></td>
+        <td>(本基金有相當比重投資於非投資等級之高風險債券)<br />
+(本基金之配息來源可能為本金)</td>
+        <td>RR3</td>
+        <td>月配息</td>
+        <td>美元</td>
+        <td>8D08</td>
+      </tr>
+      <tr>
+        <td>高收益債券</td>
+        <td><a href="http://fund.hncb.com.tw/w/wr/wr02_ACKH63-8D09.djhtm" target="_blank">野村美利堅高收益債基金</a></td>
+        <td>(本基金有相當比重投資於非投資等級之高風險債券)<br />
+(本基金之配息來源可能為本金)</td>
+        <td>RR3</td>
+        <td>月配息</td>
+        <td>人民幣</td>
+        <td>8D09</td>
+      </tr>
+      </table>
+  </div>
+<div id="pageline">
+</div>
+</div>
+</div>
+</body>
+</html>

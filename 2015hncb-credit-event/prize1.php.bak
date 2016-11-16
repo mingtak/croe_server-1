@@ -1,0 +1,64 @@
+<?php
+define('TEMPDIR','./admin/');
+require(TEMPDIR."endechn.php");
+require(TEMPDIR."coreclass.php");
+
+$url='http://wonder.ielife.net/r_prize.asp?par=';
+$data = $_GET['par'] ;
+//echo 'Decode Data =>' . trans_decrypt($data) . '<=' . strlen(trans_decrypt($data)) . '<br>';
+session_start();
+	
+	$aepublic=new CEngine();
+	$aepublic->PublicInitialize();
+	$aepublic->RequestVariables();
+	$prizeList="ABCZ";
+	$errorMsg = "";
+	
+  if (  isset($aepublic->par) && $aepublic->par != "") {  
+  
+		$data=trans_decrypt($data);
+	//	echo $data;
+		$recno=floor(strlen($data)/10);
+		$usedrec="";
+		$freerec="" ;   
+		
+		for ($i=0;$i<$recno;$i++){
+			$SeqID=substr($data,$i*10,10);
+			$sql="SELECT * FROM HNCr_SeqDB WHERE HNCr_SeqDB_SeqID='" . $SeqID .  "'";
+			$aepublic->DBQuery($sql);
+			if ($aepublic->DBGetRow()) {
+				$CrDate=$aepublic->access["HNCr_SeqDB_Date"];
+				$Prize=$aepublic->access["HNCr_SeqDB_Prize"];
+				$PrizeSeqId=$aepublic->access["HNCr_SeqDB_PrizeSeqID"];
+				$usedrec=$SeqID . $Date . $Prize . $PrizeSeqId;
+				if( httpGet($url . trans_encrypt($usedrec) )=="0000")
+						$usedrec=$usedrec.$SeqID;	
+				else
+					httpGet($url . trans_encrypt($usedrec) );
+			}else{
+				$freerec=$freerec.$SeqID;
+			}
+			
+			
+		//search rec in data base  if this record used return the status by call ret.asp else 
+		}
+		
+		if ($freerec!=""){
+			if ($usedrec=="")
+				header("location: prizestart.php?par=" . trans_encrypt($freerec));
+			else
+				header("location: prizestart.php?par=" . trans_encrypt($freerec)."par2=".trans_encrypt($usedrec));
+		}
+			
+		else
+			echo '<javascript >alert("無可用序號")</script>';
+	exit;
+}
+
+
+
+
+ 
+
+
+?>
